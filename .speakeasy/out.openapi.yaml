@@ -1,0 +1,1590 @@
+openapi: 3.1.0
+info:
+  title: Nova API
+  version: 0.6.4
+  contact:
+    name: Nova Engineering
+    email: support@nova.net
+  description: The Nova API exposes programmatic access to fund operations including distributions, vehicles, entities, and contacts. Authentication is via OAuth2 client_credentials with per-scope authorization. Live and test mode share the same host (`api.nova.net`); the mode is discriminated by the credential prefix (`sk_prod_*` vs `sk_test_*`). All write operations require an `X-Organization-Id` header identifying the acting organization.
+servers:
+  - url: https://api.nova.net
+security:
+  - OAuth2: []
+tags:
+  - name: Authentication
+    description: OAuth2 client_credentials token exchange
+  - name: Distributions
+    description: Manage distributions
+  - name: Entities
+    description: Manage entities
+  - name: Payment Instructions
+    description: Manage payment instructions for entities
+  - name: Contacts
+    description: Manage contacts
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: |-
+        OAuth2 client_credentials grant for server-to-server access. Onboard via your Nova admin to receive a `client_id` and `client_secret`, then `POST /oauth/token` to exchange them for a short-lived access token. Send the token as `Authorization: Bearer <access_token>` on every authenticated request. Tokens expire after 3600 seconds — refresh by re-exchanging credentials.
+
+        Production and sandbox share the same host (`api.nova.net`); the mode is determined by the credential prefix — `sk_prod_*` issues live-mode tokens, `sk_test_*` issues test-mode tokens. Test-mode tokens never affect production data.
+      flows:
+        clientCredentials:
+          tokenUrl: /oauth/token
+          scopes:
+            organizations:read: Read organization data
+            organizations:write: Create or update organization data
+            organizations:*: Full access to organization data
+            distributions:read: Read distribution data
+            distributions:write: Create or update distributions
+            distributions:*: Full access to distributions
+            vehicles:read: Read vehicle data
+            vehicles:write: Create or update vehicles
+            vehicles:*: Full access to vehicles
+            entities:read: Read entity data
+            entities:write: Create or update entities
+            entities:*: Full access to entities
+            contacts:read: Read contact data
+            contacts:write: Create or update contacts
+            contacts:*: Full access to contacts
+  schemas:
+    Error:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - error
+          description: Object type identifier.
+          example: error
+          x-stainless-const: true
+        type:
+          $ref: "#/components/schemas/ApiErrorType"
+        code:
+          type: string
+          description: Machine-readable error code. Stable across releases for a given failure mode.
+          example: resource_not_found
+        message:
+          type: string
+          description: Human-readable error message intended for developers, not end-users.
+        status:
+          type: integer
+          description: HTTP status code.
+          example: 404
+        param:
+          type: string
+          description: The request parameter that caused the error, if applicable.
+        doc_url:
+          type: string
+          format: uri
+          description: Link to documentation about this error.
+        request_id:
+          type: string
+          description: Request identifier for support inquiries.
+      required:
+        - object
+        - type
+        - code
+        - message
+        - status
+      example:
+        object: error
+        type: invalid_request_error
+        code: parameter_invalid
+        message: The 'limit' parameter must be between 1 and 100.
+        status: 400
+        param: limit
+    ApiErrorType:
+      type: string
+      enum:
+        - authentication_error
+        - permission_error
+        - invalid_request_error
+        - not_found_error
+        - conflict_error
+        - rate_limit_error
+        - api_error
+      description: High-level error category.
+    OAuthError:
+      type: object
+      properties:
+        error:
+          type: string
+          enum:
+            - invalid_request
+            - invalid_client
+            - invalid_grant
+            - unauthorized_client
+            - unsupported_grant_type
+            - invalid_scope
+            - server_error
+          description: Machine-readable OAuth error code (RFC 6749 §5.2).
+        error_description:
+          type: string
+          description: Human-readable explanation of the error.
+      required:
+        - error
+    OAuthTokenRequest:
+      type: object
+      properties:
+        grant_type:
+          type: string
+          enum:
+            - client_credentials
+          description: Must be `client_credentials`.
+        client_id:
+          type: string
+          description: Client identifier. Required unless provided via HTTP Basic auth in the `Authorization` header.
+        client_secret:
+          type: string
+          description: Client secret. Required unless provided via HTTP Basic auth in the `Authorization` header.
+        scope:
+          type: string
+          description: Space-separated list of requested scopes. Omit to request all scopes granted to the client.
+          example: distributions:read entities:read
+      required:
+        - grant_type
+    OAuthTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: "Bearer token. Send as `Authorization: Bearer <access_token>` on authenticated requests."
+        token_type:
+          type: string
+          enum:
+            - Bearer
+        expires_in:
+          type: integer
+          exclusiveMinimum: 0
+          description: Lifetime of the token, in seconds. Re-exchange credentials before expiry.
+        scope:
+          type: string
+          description: Space-separated list of scopes the token was granted.
+          example: distributions:read
+      required:
+        - access_token
+        - token_type
+        - expires_in
+        - scope
+    ContactRef:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the contact
+          example: cnt_123
+      required:
+        - id
+      additionalProperties: false
+    EntityRef:
+      type: object
+      properties:
+        id:
+          type: string
+          example: ent_123
+          description: ID of the entity
+      required:
+        - id
+      additionalProperties: false
+    PaymentInstructionsRef:
+      type: object
+      properties:
+        id:
+          type: string
+          example: pmi_123
+          description: ID of the payment instructions
+      required:
+        - id
+      additionalProperties: false
+    DistributionRef:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the distribution
+      required:
+        - id
+      additionalProperties: false
+    OrganizationId:
+      type: string
+      description: ID of the organization the request acts on
+      example: org_Xk7d2pQR9m3nBwYz
+    IdempotencyKey:
+      type: string
+      description: Unique key for idempotent requests. If you retry a request with the same key, the API returns the original response without performing the operation again.
+    DistributionList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Distribution"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/distributions
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    Distribution:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - distribution
+          description: Object type identifier.
+          example: distribution
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        id:
+          type: string
+          description: ID of the distribution
+        name:
+          type: string
+          minLength: 1
+          example: April 20th Distribution from XYZ Sale
+        distribution_date:
+          type: string
+          format: date-time
+          description: Distribution date
+          example: 2024-04-20T00:00:00Z
+        vehicle:
+          type: string
+          description: ID of the vehicle this distribution pays from
+        short_id:
+          type: string
+        status:
+          $ref: "#/components/schemas/DistributionStatus"
+        published_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        approved_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        executed_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        cancelled_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        sender_url:
+          type: string
+          format: uri
+          description: A link to manage this distribution in the Nova dashboard
+        payments:
+          $ref: "#/components/schemas/DistributionPaymentList"
+      required:
+        - object
+        - livemode
+        - id
+        - name
+        - distribution_date
+        - vehicle
+        - short_id
+        - status
+        - published_at
+        - approved_at
+        - executed_at
+        - cancelled_at
+        - created_at
+        - updated_at
+        - sender_url
+        - payments
+      additionalProperties: false
+    DistributionStatus:
+      type: string
+      enum:
+        - draft
+        - published
+        - approved
+        - executed
+        - cancelled
+    DistributionPaymentList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/DistributionPayment"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/distributions/{distribution_id}/payments
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    DistributionPayment:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - distribution_payment
+          description: Object type identifier.
+          example: distribution_payment
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        id:
+          type: string
+          description: ID of the distribution payment
+        amount:
+          type: integer
+          exclusiveMinimum: 0
+          description: Amount in the smallest currency unit
+          example: 1000
+        currency:
+          $ref: "#/components/schemas/Currency"
+        distribution_date_override:
+          type: string
+          format: date-time
+          description: Distribution date override
+          example: 2024-04-20T00:00:00Z
+        status:
+          $ref: "#/components/schemas/DistributionPaymentStatus"
+        recipient_confirmed_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        verified_at:
+          type:
+            - string
+            - "null"
+          format: date-time
+        entity:
+          $ref: "#/components/schemas/Entity"
+        notifications:
+          type: array
+          items:
+            $ref: "#/components/schemas/DistributionNotification"
+          description: Contacts notified when the payment is published.
+      required:
+        - object
+        - livemode
+        - id
+        - amount
+        - currency
+        - status
+        - recipient_confirmed_at
+        - verified_at
+        - entity
+        - notifications
+      additionalProperties: false
+    Currency:
+      type: string
+      enum:
+        - USD
+      description: ISO 4217 currency code (USD-only currently)
+      example: USD
+    DistributionPaymentStatus:
+      type: string
+      enum:
+        - staged
+        - recipient_confirmed
+        - verified
+        - disbursed
+        - failed
+      example: staged
+    Entity:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - entity
+          description: Object type identifier.
+          example: entity
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        id:
+          type: string
+          example: ent_123
+          description: ID of the entity
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Legal name of the entity
+          example: Jane Doe, LLC
+        type:
+          $ref: "#/components/schemas/EntityType"
+        external_references:
+          type: array
+          items:
+            type: string
+          description: Your own identifiers for this entity
+          example:
+            - entity-123
+      required:
+        - object
+        - livemode
+        - id
+        - name
+        - type
+        - external_references
+      additionalProperties: false
+    EntityType:
+      type: string
+      enum:
+        - individual
+        - individual_retirement_plan
+        - corporation
+        - llc
+        - partnership
+        - trust
+        - joint_tenants_ros
+        - tenants_in_common
+        - community_property
+        - registered_investment_company
+        - foundation
+        - charitable_remainder_trust
+        - endowment
+        - employee_benefit_plan
+        - keogh_plan
+        - other_entity
+      example: individual
+    DistributionNotification:
+      type: object
+      properties:
+        contact:
+          $ref: "#/components/schemas/Contact"
+      required:
+        - contact
+      additionalProperties: false
+    Contact:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - contact
+          description: Object type identifier.
+          example: contact
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        id:
+          type: string
+          description: ID of the contact
+          example: cnt_123
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Full legal name
+          example: Jane Doe
+        email:
+          type: string
+          format: email
+          description: Email address
+          example: jane.doe@example.com
+        external_references:
+          type: array
+          items:
+            type: string
+          description: Your own identifiers for this contact
+          example:
+            - contact-123
+      required:
+        - object
+        - livemode
+        - id
+        - name
+        - email
+        - external_references
+      additionalProperties: false
+    DistributionInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          example: April 20th Distribution from XYZ Sale
+        distribution_date:
+          type: string
+          format: date-time
+          description: Distribution date
+          example: 2024-04-20T00:00:00Z
+        vehicle:
+          type: string
+          description: ID of the vehicle this distribution pays from
+        payments:
+          type: array
+          items:
+            $ref: "#/components/schemas/DistributionPaymentInput"
+          minItems: 1
+          description: List of payments
+      required:
+        - name
+        - distribution_date
+        - vehicle
+        - payments
+      additionalProperties: false
+    DistributionPaymentInput:
+      type: object
+      properties:
+        amount:
+          type: integer
+          exclusiveMinimum: 0
+          description: Amount in the smallest currency unit
+          example: 1000
+        currency:
+          $ref: "#/components/schemas/Currency"
+        distribution_date_override:
+          type: string
+          format: date-time
+          description: Distribution date override
+          example: 2024-04-20T00:00:00Z
+        entity:
+          type: string
+          description: ID of the entity receiving this payment. The entity will have an implicit association created with the distribution vehicle.
+        notifications:
+          type: array
+          items:
+            $ref: "#/components/schemas/DistributionNotificationInput"
+          description: Contacts to notify when the payment is published.
+      required:
+        - amount
+        - currency
+        - entity
+        - notifications
+      additionalProperties: false
+    DistributionNotificationInput:
+      type: object
+      properties:
+        contact:
+          $ref: "#/components/schemas/ContactRef"
+      required:
+        - contact
+      additionalProperties: false
+    EntityPaymentInstructionsList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/EntityPaymentInstructions"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/payment_instructions
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    EntityPaymentInstructions:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - entity_payment_instructions
+          description: Object type identifier.
+          example: entity_payment_instructions
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        entity:
+          type: string
+          example: ent_123
+          description: ID of the entity
+        payment_instructions:
+          $ref: "#/components/schemas/PaymentInstructionsList"
+      required:
+        - object
+        - livemode
+        - entity
+        - payment_instructions
+      additionalProperties: false
+    PaymentInstructionsList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/PaymentInstructions"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/entities/ent_123/payment_instructions
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    PaymentInstructions:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - payment_instructions
+          description: Object type identifier.
+          example: payment_instructions
+          x-stainless-const: true
+        livemode:
+          type: boolean
+          description: Whether this object exists in live mode (`true`) or test mode (`false`).
+        id:
+          type: string
+          example: pmi_123
+          description: ID of the payment instructions
+      required:
+        - object
+        - livemode
+        - id
+      additionalProperties: false
+    EntityPaymentInstructionsInput:
+      type: object
+      properties:
+        entity:
+          type: string
+          example: ent_123
+          description: ID of the entity
+        payment_instructions:
+          type: array
+          items:
+            $ref: "#/components/schemas/PaymentInstructionsInput"
+      required:
+        - entity
+        - payment_instructions
+      additionalProperties: false
+    PaymentInstructionsInput:
+      oneOf:
+        - $ref: "#/components/schemas/AchInstructionsInput"
+        - $ref: "#/components/schemas/DomesticWireInstructionsInput"
+        - $ref: "#/components/schemas/InternationalWireInstructionsInput"
+      discriminator:
+        propertyName: type
+        mapping:
+          ach: "#/components/schemas/AchInstructionsInput"
+          domestic_wire: "#/components/schemas/DomesticWireInstructionsInput"
+          international_wire: "#/components/schemas/InternationalWireInstructionsInput"
+    AchInstructionsInput:
+      type: object
+      properties:
+        beneficiary_name:
+          type: string
+          description: Name of the account holder, as registered with the bank.
+          example: Jane Doe
+        account_number:
+          type: string
+          description: Bank account number.
+          example: "123456789"
+        bank_name:
+          type: string
+          description: Name of the bank.
+          example: Bank of America
+        branch_code:
+          type: string
+          example: "123456"
+          description: Bank branch code (e.g. sort code, IFSC, BSB, etc.). Primarily used for international wires.
+        type:
+          type: string
+          enum:
+            - ach
+          x-stainless-const: true
+        routing_number:
+          type: string
+          description: ABA routing number
+          example: "021000021"
+      required:
+        - type
+      additionalProperties: false
+      description: US ACH instructions
+    DomesticWireInstructionsInput:
+      type: object
+      properties:
+        beneficiary_name:
+          type: string
+          description: Name of the account holder, as registered with the bank.
+          example: Jane Doe
+        account_number:
+          type: string
+          description: Bank account number.
+          example: "123456789"
+        bank_name:
+          type: string
+          description: Name of the bank.
+          example: Bank of America
+        branch_code:
+          type: string
+          example: "123456"
+          description: Bank branch code (e.g. sort code, IFSC, BSB, etc.). Primarily used for international wires.
+        intermediary_party_name:
+          type: string
+          description: Name of the intermediary bank.
+          example: Intermediary Bank
+        intermediary_party_swift_code:
+          type: string
+          description: SWIFT/BIC code of the intermediary bank.
+          example: INTBANKXXX
+        originator_to_beneficiary_instructions_line1:
+          type: string
+          description: Payment instructions line 1.
+          example: For further credit to Jane Doe
+        originator_to_beneficiary_instructions_line2:
+          type: string
+          description: Payment instructions line 2.
+          example: Invoice 12345
+        originator_to_beneficiary_instructions_line3:
+          type: string
+          description: Payment instructions line 3.
+          example: Attn Accounts Payable
+        type:
+          type: string
+          enum:
+            - domestic_wire
+          x-stainless-const: true
+        routing_number:
+          type: string
+          description: ABA routing number
+          example: "021000021"
+        address:
+          $ref: "#/components/schemas/WireAddress"
+      required:
+        - type
+      additionalProperties: false
+      description: US domestic wire instructions
+    WireAddress:
+      type: object
+      properties:
+        street1:
+          type: string
+          description: Street address line 1. Must not be a PO box.
+          example: 123 Main St
+        street2:
+          type: string
+          description: Street address line 2. Must not be a PO box.
+          example: Suite 100
+        city:
+          type: string
+          description: City
+          example: San Francisco
+        state:
+          type: string
+          description: State or province. For US addresses must be exactly 2 chars.
+          example: CA
+        postal_code:
+          type: string
+          description: Postal code. For US addresses, ZIP or ZIP+4.
+          example: "94105"
+        country_code:
+          type: string
+          description: ISO 3166-1 alpha-2 country code
+          example: US
+      required:
+        - street1
+        - city
+        - country_code
+      additionalProperties: false
+    InternationalWireInstructionsInput:
+      type: object
+      properties:
+        beneficiary_name:
+          type: string
+          description: Name of the account holder, as registered with the bank.
+          example: Jane Doe
+        account_number:
+          type: string
+          description: Bank account number.
+          example: "123456789"
+        bank_name:
+          type: string
+          description: Name of the bank.
+          example: Bank of America
+        branch_code:
+          type: string
+          example: "123456"
+          description: Bank branch code (e.g. sort code, IFSC, BSB, etc.). Primarily used for international wires.
+        intermediary_party_name:
+          type: string
+          description: Name of the intermediary bank.
+          example: Intermediary Bank
+        intermediary_party_swift_code:
+          type: string
+          description: SWIFT/BIC code of the intermediary bank.
+          example: INTBANKXXX
+        originator_to_beneficiary_instructions_line1:
+          type: string
+          description: Payment instructions line 1.
+          example: For further credit to Jane Doe
+        originator_to_beneficiary_instructions_line2:
+          type: string
+          description: Payment instructions line 2.
+          example: Invoice 12345
+        originator_to_beneficiary_instructions_line3:
+          type: string
+          description: Payment instructions line 3.
+          example: Attn Accounts Payable
+        type:
+          type: string
+          enum:
+            - international_wire
+          x-stainless-const: true
+        swift_code:
+          type: string
+          description: SWIFT/BIC code.
+          example: BOFAUS3N
+        address:
+          $ref: "#/components/schemas/WireAddress"
+      required:
+        - type
+      additionalProperties: false
+      description: International wire instructions
+    EntityList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Entity"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/entities
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    EntityCreateInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Legal name of the entity
+          example: Jane Doe, LLC
+        type:
+          $ref: "#/components/schemas/EntityType"
+        external_references:
+          type: array
+          items:
+            type: string
+          description: Your own identifiers for this entity
+          example:
+            - entity-123
+      required:
+        - name
+        - type
+      additionalProperties: false
+    ContactList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Object type identifier.
+          example: list
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Contact"
+          description: The page of items.
+        has_more:
+          type: boolean
+          description: Whether there are more items available after this page.
+        url:
+          type: string
+          description: The URL for this list endpoint.
+          example: /v1/contacts
+      required:
+        - object
+        - data
+        - has_more
+        - url
+      additionalProperties: false
+    ContactCreateInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Full legal name
+          example: Jane Doe
+        email:
+          type: string
+          format: email
+          description: Email address
+          example: jane.doe@example.com
+        external_references:
+          type: array
+          items:
+            type: string
+          description: Your own identifiers for this contact
+          example:
+            - contact-123
+      required:
+        - name
+        - email
+      additionalProperties: false
+  parameters:
+    OrganizationId:
+      schema:
+        $ref: "#/components/schemas/OrganizationId"
+      required: true
+      description: ID of the organization the request acts on
+      name: X-Organization-Id
+      in: header
+    IdempotencyKey:
+      schema:
+        $ref: "#/components/schemas/IdempotencyKey"
+      required: false
+      description: Unique key for idempotent requests. If you retry a request with the same key, the API returns the original response without performing the operation again.
+      name: Idempotency-Key
+      in: header
+paths:
+  /oauth/token:
+    post:
+      operationId: createOAuthToken
+      summary: Exchange client credentials for an access token
+      description: "RFC 6749 client_credentials grant. Authenticate with HTTP Basic auth (`Authorization: Basic <base64(client_id:client_secret)>`) or by passing `client_id` and `client_secret` in the request body. Returns a short-lived Bearer access token to use in the `Authorization` header on all other endpoints."
+      tags:
+        - Authentication
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/OAuthTokenRequest"
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OAuthTokenRequest"
+      responses:
+        "200":
+          description: Access token issued
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OAuthTokenResponse"
+        "400":
+          description: Malformed request (e.g. unsupported grant_type, invalid scope, malformed Authorization header)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OAuthError"
+        "401":
+          description: Client authentication failed (unknown client_id, wrong secret, or revoked credential)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OAuthError"
+  /distributions:
+    post:
+      operationId: createDistributions
+      summary: Create distributions
+      description: Create one or more staged fund distributions in a single request. Each distribution has one or more payments; each payment references an existing entity by ID (`entity`) and an optional list of contacts to notify (`notifications[].contact`). Create entities and contacts first via `POST /entities` and `POST /contacts`. The batch is atomic — if any distribution fails validation, none are created.
+      tags:
+        - Distributions
+      security:
+        - OAuth2:
+            - distributions:write
+      parameters:
+        - $ref: "#/components/parameters/OrganizationId"
+        - $ref: "#/components/parameters/IdempotencyKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/DistributionInput"
+              minItems: 1
+      responses:
+        "201":
+          description: Distributions created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DistributionList"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Vehicle, entity, or contact not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "409":
+          description: Conflicting state transition for this resource
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /distributions/{id}:
+    get:
+      operationId: getDistribution
+      summary: Retrieve a distribution
+      description: Retrieve a distribution with aggregated payment status.
+      tags:
+        - Distributions
+      security:
+        - OAuth2:
+            - distributions:read
+      parameters:
+        - schema:
+            type: string
+            description: ID of the distribution
+          required: true
+          description: ID of the distribution
+          name: id
+          in: path
+        - $ref: "#/components/parameters/OrganizationId"
+      responses:
+        "200":
+          description: Distribution details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Distribution"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Distribution not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /payment_instructions:
+    post:
+      operationId: createPaymentInstructions
+      summary: Create payment instructions
+      description: Create one or more payment instructions for one or more entities in a single request. Partial instructions are supported, and this endpoint does not do any input validation. The batch is atomic — if any fail to be created, none are created.
+      tags:
+        - Payment Instructions
+        - Entities
+      security:
+        - OAuth2:
+            - entities:write
+      parameters:
+        - $ref: "#/components/parameters/OrganizationId"
+        - $ref: "#/components/parameters/IdempotencyKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/EntityPaymentInstructionsInput"
+              minItems: 1
+      responses:
+        "201":
+          description: Payment instructions created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EntityPaymentInstructionsList"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /entities:
+    post:
+      operationId: createEntities
+      summary: Create entities
+      description: Create one or more entities associated with the organization in a single request. The batch is atomic — if any entity fails, none are created.
+      tags:
+        - Entities
+      security:
+        - OAuth2:
+            - entities:write
+      parameters:
+        - $ref: "#/components/parameters/OrganizationId"
+        - $ref: "#/components/parameters/IdempotencyKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/EntityCreateInput"
+              minItems: 1
+      responses:
+        "201":
+          description: Entities created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EntityList"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "409":
+          description: Entity with these external references already exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /entities/{id}:
+    get:
+      operationId: getEntity
+      summary: Retrieve an entity
+      description: Retrieve a single entity by ID.
+      tags:
+        - Entities
+      security:
+        - OAuth2:
+            - entities:read
+      parameters:
+        - schema:
+            type: string
+            example: ent_123
+            description: ID of the entity
+          required: true
+          description: ID of the entity
+          name: id
+          in: path
+        - $ref: "#/components/parameters/OrganizationId"
+      responses:
+        "200":
+          description: Entity details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Entity"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Entity not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /contacts:
+    post:
+      operationId: createContacts
+      summary: Create contacts
+      description: Create one or more contacts associated with the organization in a single request. The batch is atomic — if any contact fails validation, none are created.
+      tags:
+        - Contacts
+      security:
+        - OAuth2:
+            - contacts:write
+      parameters:
+        - $ref: "#/components/parameters/OrganizationId"
+        - $ref: "#/components/parameters/IdempotencyKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/ContactCreateInput"
+              minItems: 1
+      responses:
+        "201":
+          description: Contacts created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactList"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "409":
+          description: Contact with these external references already exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /contacts/{id}:
+    get:
+      operationId: getContact
+      summary: Retrieve a contact
+      description: Retrieve a single contact by ID.
+      tags:
+        - Contacts
+      security:
+        - OAuth2:
+            - contacts:read
+      parameters:
+        - schema:
+            type: string
+            description: ID of the contact
+            example: cnt_123
+          required: true
+          description: ID of the contact
+          name: id
+          in: path
+        - $ref: "#/components/parameters/OrganizationId"
+      responses:
+        "200":
+          description: Contact details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Contact"
+        "401":
+          description: Missing or invalid access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Missing required OAuth scope or organization access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Contact not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until the rate-limit window resets. Present on 429 responses.
+              required: true
+              description: Seconds until the rate-limit window resets. Present on 429 responses.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+webhooks: {}

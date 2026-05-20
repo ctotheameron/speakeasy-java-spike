@@ -1,0 +1,29 @@
+description = 'nova-java Spring Boot Starter'
+
+// Publishing configuration overrides
+ext {
+    publishingConfig = [
+        groupId: rootProject.group,
+        artifactId: 'nova-java-spring-boot-starter',
+        version: rootProject.version,
+        name: 'Nova Java SDK - Spring Boot Starter',
+        description: 'Spring Boot starter for the Nova Java SDK.',
+    ]
+}
+
+dependencies {
+    api project(':')
+    api project(':nova-java-spring-boot-autoconfigure')
+    api "org.springframework.boot:spring-boot-starter:${rootProject.springBootVersion}"
+}
+
+jar {
+    dependsOn 'generatePomFileForMavenPublication'
+    archiveBaseName = 'nova-java-spring-boot-starter'
+    into("META-INF/maven/net.nova/nova-java-spring-boot-starter") {
+        from(layout.buildDirectory.file("pom.xml")) {
+            // Only include if it exists to avoid build ordering issues
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        }
+    }
+}

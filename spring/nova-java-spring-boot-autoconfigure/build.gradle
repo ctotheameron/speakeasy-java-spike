@@ -1,0 +1,35 @@
+description = 'nova-java Spring Boot Auto Configuration'
+
+// Publishing configuration overrides
+ext {
+    publishingConfig = [
+        groupId: rootProject.group,
+        artifactId: 'nova-java-spring-boot-autoconfigure',
+        version: rootProject.version,
+        name: 'Nova Java SDK - Spring Boot Auto Configuration',
+        description: 'Spring Boot auto-configuration for the Nova Java SDK.',
+    ]
+}
+
+dependencies {
+    api project(':')
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    dependsOn 'generatePomFileForMavenPublication'
+    archiveBaseName = 'nova-java-spring-boot-autoconfigure'
+    into("META-INF/maven/net.nova/nova-java-spring-boot-autoconfigure") {
+        from(layout.buildDirectory.file("pom.xml")) {
+            // Only include if it exists to avoid build ordering issues
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        }
+    }
+}

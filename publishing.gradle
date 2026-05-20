@@ -1,0 +1,91 @@
+afterEvaluate {
+    if (!project.ext.has('publishingConfig') 
+        || !project.ext.publishingConfig instanceof Map) {
+        return
+    }
+
+    def config = project.ext.publishingConfig
+    publishing {
+
+        publications {
+            create("maven", MavenPublication) {
+                from(components["java"] as SoftwareComponent)
+
+                groupId = config.groupId
+                artifactId = config.artifactId
+                version = config.version
+
+                pom {
+                    properties = [
+                            'maven.compiler.source': '11',
+                            'maven.compiler.target': '11',
+                    ]
+                    name = config.name
+                    description = config.description
+                    url = 'https://github.com/ctotheameron/speakeasy-java-spike'
+                    scm {
+                        url = 'github.com/ctotheameron/speakeasy-java-spike'
+                        connection = 'scm:git:ssh://git@github.com/ctotheameron/speakeasy-java-spike.git'
+                    }
+                    licenses {
+                        license {
+                            name = 'Apache License 2.0'
+                            url = 'https://www.apache.org/licenses/LICENSE-2.0'
+                        }
+                    }
+                    developers {
+                        developer {
+                            name = 'Nova'
+                            organization = 'Nova'
+                            email = 'support@angellist.com'
+                        }
+                    }
+                    organization {
+                        name = 'Nova'
+                        url = 'https://nova.net'
+                    }
+                }
+            }
+        }
+
+        if (!project.hasProperty('skip.signing')) {
+            signing {
+                def signingKey = findProperty("signingKey")
+                def signingPassphrase = findProperty("signingPassphrase")
+                useInMemoryPgpKeys(signingKey, signingPassphrase)
+                sign publishing.publications.getByName("maven")
+            }
+        }
+    }
+
+    
+
+    // Configure POM file generation task after publishing is configured
+    tasks.named("generatePomFileForMavenPublication") {
+        destination = file(layout.buildDirectory.file("pom.xml"))
+        jar.dependsOn('generatePomFileForMavenPublication')
+    }
+}
+
+// Debug task to log publishing properties before publish tasks
+tasks.register('logPublishingProperties') {
+    doLast {
+        if (project.ext.has('publishingConfig')) {
+            def config = project.ext.publishingConfig
+            logger.quiet("Publishing properties for project '${project.name}':")
+            logger.quiet("  groupId: ${config.groupId}")
+            logger.quiet("  artifactId: ${config.artifactId}")
+            logger.quiet("  version: ${config.version}")
+            logger.quiet("  name: ${config.name}")
+            logger.quiet("  description: ${config.description}")
+            logger.quiet("  publicationName: maven")
+        }
+    }
+}
+
+// Make all publish tasks depend on the logging task and POM generation
+tasks.matching { it.name.startsWith('publish') 
+        || it.name.contains('sonatypeCentralUpload') }.configureEach {
+    dependsOn logPublishingProperties
+    dependsOn 'generatePomFileForMavenPublication'
+}

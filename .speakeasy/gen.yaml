@@ -1,0 +1,84 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: NovaSdk
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
+  useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: true
+    nameResolutionFeb2025: true
+    parameterOrderingFeb2024: true
+    requestResponseComponentNamesFeb2024: true
+    securityFeb2025: true
+    sharedErrorComponentsApr2025: true
+    sharedNestedComponentsJan2026: true
+    nameOverrideFeb2026: true
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
+  inferSSEOverload: true
+  sdkHooksConfigAccess: true
+  schemas:
+    allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: body
+  versioningStrategy: automatic
+  persistentEdits: {}
+  tests:
+    generateTests: false
+    generateNewTests: true
+    skipResponseBodyAssertions: false
+java:
+  version: 0.0.1
+  additionalDependencies: []
+  additionalPlugins: []
+  artifactID: nova-java
+  asyncMode: enabled
+  baseErrorName: NovaSDKException
+  clientServerStatusCodesAsErrors: true
+  companyEmail: support@angellist.com
+  companyName: Nova
+  companyURL: https://nova.net
+  defaultErrorName: APIException
+  enableCustomCodeRegions: false
+  enableFormatting: false
+  enableSlf4jLogging: true
+  enableStreamingUploads: true
+  explicitDocImports: true
+  flattenGlobalSecurity: true
+  forwardCompatibleEnumsByDefault: true
+  forwardCompatibleUnionsByDefault: tagged-and-untagged
+  generateOptionalUnionAccessors: true
+  generateSpringBootStarter: true
+  generateUnionDocs: true
+  githubURL: github.com/ctotheameron/speakeasy-java-spike
+  groupID: net.nova
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  inferUnionDiscriminators: true
+  inputModelSuffix: input
+  languageVersion: 11
+  license:
+    name: Apache License 2.0
+    shortName: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  maxMethodParams: 4
+  multipartArrayFormat: standard
+  nullFriendlyParameters: true
+  operationScopedParams: true
+  outputModelSuffix: output
+  packageName: net.nova.api
+  prefixModeMethodNames: true
+  projectName: nova-java
+  respectTitlesForPrimitiveUnionMembers: true
+  showSetterGetterTypesInDocs: true
+  templateVersion: v2
+  unionStrategy: populated-fields

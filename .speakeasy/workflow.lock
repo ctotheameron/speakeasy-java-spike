@@ -1,0 +1,37 @@
+speakeasyVersion: 1.763.2
+sources:
+    Nova API:
+        sourceNamespace: nova-api
+        sourceRevisionDigest: sha256:d6dfeb562a82c219947bbcf709333677115c21fefd74ffbe2d926e35f59c7b53
+        sourceBlobDigest: sha256:c6a52255fa16c0a3ba5a4be43a24d85ea74536f568b130d2070be6cb3ebbcf71
+        tags:
+            - latest
+            - 0.6.4
+targets:
+    nova-sdk:
+        source: Nova API
+        sourceNamespace: nova-api
+        sourceRevisionDigest: sha256:d6dfeb562a82c219947bbcf709333677115c21fefd74ffbe2d926e35f59c7b53
+        sourceBlobDigest: sha256:c6a52255fa16c0a3ba5a4be43a24d85ea74536f568b130d2070be6cb3ebbcf71
+        codeSamplesNamespace: nova-api-java-code-samples
+        codeSamplesRevisionDigest: sha256:2dfee0d5c5c40116c8bd2e44c9a41ba5b03063b2f7b7f8bbc4c21ee829ca9a59
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Nova API:
+            inputs:
+                - location: ../openapi.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/angellist/nova-sdk/nova-api
+    targets:
+        nova-sdk:
+            target: java
+            source: Nova API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/angellist/nova-sdk/nova-api-java-code-samples
+                labelOverride:
+                    fixedValue: Java (SDK)
+                blocking: false

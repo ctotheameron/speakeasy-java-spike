@@ -1,0 +1,1278 @@
+lockVersion: 2.0.0
+id: 16d34e99-aa4b-40a1-8adb-f77f1e33cb25
+management:
+  docChecksum: 50fcbae3e3e56187c0b5af4819cb8b0d
+  docVersion: 0.6.4
+  speakeasyVersion: 1.763.2
+  generationVersion: 2.884.4
+  releaseVersion: 0.0.1
+  configChecksum: 46ff3cf88759043140b332c5d1295638
+persistentEdits:
+  generation_id: a7e28590-7f52-4eab-a9e7-db05d4bcba4d
+  pristine_commit_hash: a6f3fc91d69e5167ec17ca7cb8c110baee1ae08f
+  pristine_tree_hash: c3cb150394905890f7c98f7e54db2903a993c3cf
+features:
+  java:
+    additionalDependencies: 0.1.0
+    core: 3.55.24
+    flattening: 2.81.1
+    globalSecurity: 2.83.4
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.83.1
+    nullables: 0.1.0
+    sdkHooks: 1.2.0
+    unions: 0.3.5
+trackedFiles:
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:2b27a763ec2b5c70648554e408dc254181222d09
+    pristine_git_object: 8f8da085659bbf87d293b49b4593e43137a4acb0
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:c74f2b8278229399431b59c47778480f0cc6b3e3
+    pristine_git_object: ed0aa64a65e8d0a0311cfd5f10cd1cf30cf79b3c
+  build.gradle:
+    id: f07866736216
+    last_write_checksum: sha1:775fe1dd100b02c9e81c16ed2c027aae5e6c6308
+    pristine_git_object: bad5aa4da1f10964587dd725812cd5e7d2e5fa9c
+  docs/models/components/AchInstructionsInput.md:
+    id: 7820f4d747a5
+    last_write_checksum: sha1:b431ba5d1ce5b3eeb8f6e663627db4d4c7b49d03
+    pristine_git_object: 2e6a4c59000d558748b12b48280b73b45dcb5017
+  docs/models/components/AchInstructionsInputType.md:
+    id: 550b81ef265f
+    last_write_checksum: sha1:28382271a8c3afe207d23d889b8c63ecf06eca94
+    pristine_git_object: 85d8f6bbfba391f5011a05e5c3e430c643ebeb74
+  docs/models/components/ApiErrorType.md:
+    id: 0cd5f6e50502
+    last_write_checksum: sha1:ffe9692dcf9d72bdca9be8cc92aaef16368be510
+    pristine_git_object: f02348c192e2a08ab469b72546a49d53b94c8f8b
+  docs/models/components/Contact.md:
+    id: 1868c7d810a7
+    last_write_checksum: sha1:da8d28820909f08376590576aa05e7b2b71c24cf
+    pristine_git_object: fe39763b4737182cc8d6c20d1e0f57c9297c0230
+  docs/models/components/ContactCreateInput.md:
+    id: 3307f9474c48
+    last_write_checksum: sha1:2fe74181189dd38828994efd2b49d574b0ba1a0d
+    pristine_git_object: 0581276aed7d54cc4d78139c46115a3fe7f1f5f3
+  docs/models/components/ContactList.md:
+    id: b48fef35b21c
+    last_write_checksum: sha1:b17ba352439a0f19081a0ce0a9a47b10e87e22fc
+    pristine_git_object: 645ca62144b3f066396aaf63a2845800dc61bb06
+  docs/models/components/ContactListObject.md:
+    id: 862eecfdcce3
+    last_write_checksum: sha1:d4ab0c844a456e6af92dd8a8e903941ec53ec639
+    pristine_git_object: e35dda842eacca469cfaf0826541a93eac5a49e5
+  docs/models/components/ContactObject.md:
+    id: 2616b41899f2
+    last_write_checksum: sha1:970d6334fe428ad83c99bd72ad038783a17a3768
+    pristine_git_object: 64b69d573ef83390dc2e28d2089608d3f3394787
+  docs/models/components/ContactRef.md:
+    id: 37e2011f71f2
+    last_write_checksum: sha1:423a09ab7916d4e048cd932ccb1e23736a5fa18a
+    pristine_git_object: 432045af946089f00f04aafd47016878b9d8a37b
+  docs/models/components/Currency.md:
+    id: 3ed13a77efb9
+    last_write_checksum: sha1:7054f051238f7fc3e369a40dcb0e5e0818e7af22
+    pristine_git_object: d786111d9b59ce195b745b385419953a5ef08b6a
+  docs/models/components/Distribution.md:
+    id: 25437e387a7d
+    last_write_checksum: sha1:038d25f83d0b0fb1b4cbe8ed11af91d777372445
+    pristine_git_object: 527c19598658cf13d36f2323362f0b97bcea80dc
+  docs/models/components/DistributionInput.md:
+    id: 9603f277f40f
+    last_write_checksum: sha1:98f764bd3ebc48052557fdf42756e848c911a2f6
+    pristine_git_object: 07cbb4d572ce78ac34e7772f9b7a70f241db6671
+  docs/models/components/DistributionList.md:
+    id: 6edef6c2fa39
+    last_write_checksum: sha1:ba1ae85113138f1f56ac00a38a52ee0b6c822c36
+    pristine_git_object: 20d52ab9e3739626ae22402919aa5c701401383a
+  docs/models/components/DistributionListObject.md:
+    id: 580b5bf082f9
+    last_write_checksum: sha1:ec456c6ce0938e583bd6237bc5e752bef3db5768
+    pristine_git_object: 0c700e61516d82af0622ec9c6456d9c10910dde6
+  docs/models/components/DistributionNotification.md:
+    id: 129ac07bda30
+    last_write_checksum: sha1:d480908c5fb8302d2a9e0f24594c28e648ffee96
+    pristine_git_object: 4ad043258ab13cfcc0fa211e34427745ef39b265
+  docs/models/components/DistributionNotificationInput.md:
+    id: aadd671da9af
+    last_write_checksum: sha1:1719b8077da8802567a7c358e10a6756e63c62e3
+    pristine_git_object: f48364ef75ebfd8ebb2d3ab397f77dcbe4796c3a
+  docs/models/components/DistributionObject.md:
+    id: 74c3cee5ec5c
+    last_write_checksum: sha1:d59e5d3d6118c409a3ca8dcee32683e8de112f39
+    pristine_git_object: 6ea9ead23a6f6ecad532c0582e79785750d1dda1
+  docs/models/components/DistributionPayment.md:
+    id: a2ab78252493
+    last_write_checksum: sha1:23bc8bbb526dc8c3794a4c9e969b3d63e8578f56
+    pristine_git_object: 4a2d3ca6da17f94af77a32ac81c491e75b62d6bf
+  docs/models/components/DistributionPaymentInput.md:
+    id: eacbaab862ea
+    last_write_checksum: sha1:e7a86142138d84b30ce356028f3319f867f253cf
+    pristine_git_object: 33815c619f069f4432aa90237657bed122d0d6f0
+  docs/models/components/DistributionPaymentList.md:
+    id: b9130df86963
+    last_write_checksum: sha1:d65b4b6f6d860c25f87319827fc6e998f81a901a
+    pristine_git_object: 92f0522c3a213bb7e6226b69ef9f7055c61859e4
+  docs/models/components/DistributionPaymentListObject.md:
+    id: 2734da40c150
+    last_write_checksum: sha1:dbf198612cc3a43a18d784b6e359c861b1c1121d
+    pristine_git_object: 7faf69db4a7363c3b0d9a9305670abe7753ffe1f
+  docs/models/components/DistributionPaymentObject.md:
+    id: c0853fa3c060
+    last_write_checksum: sha1:a67f7d8d8bc90b0e7e0587e1d28d420ebb52ce07
+    pristine_git_object: 0efd24d38afe7139c2cbc908543f3fdf7e98a013
+  docs/models/components/DistributionPaymentStatus.md:
+    id: dbb01fa0735d
+    last_write_checksum: sha1:2b9919935c64f3ad0cdafad6235f1ee92b81ca7f
+    pristine_git_object: 5fb8bc8504c04bb4008d3ad25f0e53f0012fc660
+  docs/models/components/DistributionStatus.md:
+    id: 1e4a9bd99c60
+    last_write_checksum: sha1:74537d7dac85eca7a4f270c30269a133e23ec286
+    pristine_git_object: 14abe9cec6f5e85f2d86e710a144159e70f81baf
+  docs/models/components/DomesticWireInstructionsInput.md:
+    id: 8b9aa81f1b48
+    last_write_checksum: sha1:4271e000021fc1908fb3b23b6637f735dec9efa6
+    pristine_git_object: 694d6fd3a1c6350e6bc225981e92e61bf4099c3e
+  docs/models/components/DomesticWireInstructionsInputType.md:
+    id: 263ee7fa487a
+    last_write_checksum: sha1:f353d7522869abfa146991c5d0593e8cf65f71ec
+    pristine_git_object: 57d7b54881a69de7003fe6458a0756f599c9ba1d
+  docs/models/components/Entity.md:
+    id: ab59313d2626
+    last_write_checksum: sha1:93c81ad4796b33260b6e4ba5e3cfe7a8f0348271
+    pristine_git_object: 1be836e956299229a9edc4ca0c911ecad25bdeff
+  docs/models/components/EntityCreateInput.md:
+    id: dec4278064ed
+    last_write_checksum: sha1:766d72e4c18fcad80c388349d6e121b4fe167406
+    pristine_git_object: c8dd719438f53a3b699511337b86d3d17e5aa275
+  docs/models/components/EntityList.md:
+    id: aa894c2cca36
+    last_write_checksum: sha1:c3ff809f1bb2b201edb50c88663ddb474db8422c
+    pristine_git_object: 7ea31df4b1a8985b75d3cdc839240ab6bbce6ece
+  docs/models/components/EntityListObject.md:
+    id: d796d6300f8d
+    last_write_checksum: sha1:90aec0dde3de637589cd79a6532e1a3cd123fc40
+    pristine_git_object: 395bb4f235ba1bcfd1c8f138df86ed6b1f48df7e
+  docs/models/components/EntityObject.md:
+    id: a14927a66b02
+    last_write_checksum: sha1:327d35083b2a967f0cb3a9876ab50f17618587e6
+    pristine_git_object: 1f5aa7c686635d9597b7f03d78f2fda2d3d86a17
+  docs/models/components/EntityPaymentInstructions.md:
+    id: b21d281f8444
+    last_write_checksum: sha1:9d6df5319382eb95f168b14554b48350eda80918
+    pristine_git_object: 5ac9b690c5db64f5fc1aabc861baf716ab1c20ae
+  docs/models/components/EntityPaymentInstructionsInput.md:
+    id: 88d473d9e182
+    last_write_checksum: sha1:359a0d169304d37202bfd21c09fadba1fca8f74e
+    pristine_git_object: ea50f2e0d6464f55550da6090edb77b815c8f1c7
+  docs/models/components/EntityPaymentInstructionsList.md:
+    id: 3ddd6c984aba
+    last_write_checksum: sha1:535e01f7f4a14311460615a79f29c42df12bace5
+    pristine_git_object: 643066c01bbfe34fecd846af4af18527a1836f68
+  docs/models/components/EntityPaymentInstructionsListObject.md:
+    id: ce905b101280
+    last_write_checksum: sha1:c16fb29f49cc3edfef3424c2dab51a33ff5d1dc3
+    pristine_git_object: a08d95d79498522112360347d6d22432c30059b4
+  docs/models/components/EntityPaymentInstructionsObject.md:
+    id: 0fbaa74511ae
+    last_write_checksum: sha1:c8a07ba55af0914c60014604fa85250a336cfc29
+    pristine_git_object: fc42d248698e7cb146f12e887287874cfcff0b74
+  docs/models/components/EntityType.md:
+    id: 702dd0a87f4c
+    last_write_checksum: sha1:740e43588a0efea7346c9d2c613dfded9e57a2b6
+    pristine_git_object: a5fb214f20dcbc64aa08f6202e08537f52a9808a
+  docs/models/components/Error.md:
+    id: 3d17bbb75eba
+    last_write_checksum: sha1:75e2b9c837cf03a5865625e5e32e86122b9be86b
+    pristine_git_object: 025212ab5ba96aeeae53963ba44cff3cd4f46264
+  docs/models/components/ErrorObject.md:
+    id: 23f5c09f1a48
+    last_write_checksum: sha1:01446d31536ad2f7c130d49894cf252add61e5c8
+    pristine_git_object: 8cd53d4c1d0044bfbaa37999cb15567ff8266e3a
+  docs/models/components/GrantType.md:
+    id: ff52f1ab2158
+    last_write_checksum: sha1:9b64c8e03772b70fab3d1c29f81388eb6845eb38
+    pristine_git_object: 2eb1299eb48cd72b7d7deefa6810816afc2152d4
+  docs/models/components/InternationalWireInstructionsInput.md:
+    id: 67fb79ae67b8
+    last_write_checksum: sha1:70654f79c7db644c9085bb908fee43177b97479e
+    pristine_git_object: 0ba08dc7c61879db6a408b27c73c2952d2f15469
+  docs/models/components/InternationalWireInstructionsInputType.md:
+    id: 33cdaf93ccb6
+    last_write_checksum: sha1:81d037603558e2874076caea903af0f0dfebe97c
+    pristine_git_object: 7a965126665d1d1e62634a8e38ae6205606e7f02
+  docs/models/components/OAuthTokenRequest.md:
+    id: e2c732587819
+    last_write_checksum: sha1:178d6e07d31316a87df631aeeef265d854998ac0
+    pristine_git_object: 14953bbd8cc476cb46827916dd9ba9080bc5f845
+  docs/models/components/OAuthTokenResponse.md:
+    id: f46688714abd
+    last_write_checksum: sha1:78237d851628102f9325ea642bb690f51e55d9aa
+    pristine_git_object: cae987c8a7d10d12ff9a9f365f21bcb90b99e5fa
+  docs/models/components/PaymentInstructions.md:
+    id: fbde1930688e
+    last_write_checksum: sha1:a455d288bdc874f8f42651496bf3df03842b2e41
+    pristine_git_object: c03fd47e42f72732c3239d091eea4026c82addfe
+  docs/models/components/PaymentInstructionsInput.md:
+    id: 3b01d6d57078
+    last_write_checksum: sha1:8ccc314a0f10f77b88c89f29836489558f7fe008
+    pristine_git_object: 4cd452828a34f6599fd7dc086ae346401b545dfa
+  docs/models/components/PaymentInstructionsList.md:
+    id: 4c76971a7511
+    last_write_checksum: sha1:ad94fc914b0c66d7d8c101bec12b7443bea5f177
+    pristine_git_object: d504dce4cc989c5e7f62c1e87bc441797bdeb167
+  docs/models/components/PaymentInstructionsListObject.md:
+    id: 51f15651fb40
+    last_write_checksum: sha1:17139ec51e1d61809bb916547283f2bb2a2e56ca
+    pristine_git_object: 8a2de378c31a26cf90979259dcdcf5fa17147438
+  docs/models/components/PaymentInstructionsObject.md:
+    id: 3e4e7a0ca7ee
+    last_write_checksum: sha1:313f645432f48ba9494a724671fa4b69c6f488c7
+    pristine_git_object: 48876e5c24fc26261ba5f71127148b1a03d13dc4
+  docs/models/components/Security.md:
+    id: 3878f0f84029
+    last_write_checksum: sha1:788e52724d033dff98c6eb075ce9941483a9c426
+    pristine_git_object: 10213f329dd7186c6ca74ae0f7e52b2182d474c5
+  docs/models/components/TokenType.md:
+    id: 704bae7c65a9
+    last_write_checksum: sha1:a027928b643d368e5d911818c592bd0614e8bb4a
+    pristine_git_object: 4b3d9aaec20cc1ac6be316305b26069aef486620
+  docs/models/components/WireAddress.md:
+    id: 5b3d62e4a004
+    last_write_checksum: sha1:ecb819a15d038184c34e69ed4a03b45e86926dd3
+    pristine_git_object: 7493ff51cba92e08ed0d7b1b1fef2451e0ff939a
+  docs/models/errors/Error.md:
+    id: d5611a80937b
+    last_write_checksum: sha1:7898baf4c0f94808fe7de121a2fbff5a6875810f
+    pristine_git_object: 6819aef31ed6995d969d2242d1912e9cb21c4d42
+  docs/models/errors/OAuthError.md:
+    id: 0bfe117c4135
+    last_write_checksum: sha1:172fe4110be7db78d2d2943dcd1bc1fcc3553f13
+    pristine_git_object: e6c5eef7d7a622a1f35267292e914dc0a522bc70
+  docs/models/operations/CreateContactsRequest.md:
+    id: da2976b368dd
+    last_write_checksum: sha1:aab08c6ab5891290d194cfeea0ed508cd7c4e8a8
+    pristine_git_object: a62d5bc9e55ac94036d39d0274807a95a7503ecf
+  docs/models/operations/CreateContactsResponse.md:
+    id: 4dd15b625eed
+    last_write_checksum: sha1:ad720f1294a0ae1f945e7e376104286d788d0a50
+    pristine_git_object: e578cd27dad64a4d4a821fabd398b423353d107d
+  docs/models/operations/CreateDistributionsRequest.md:
+    id: 3803245dade6
+    last_write_checksum: sha1:a67247906a21934159a76cba8dc4c52b58b6a6fa
+    pristine_git_object: f737f03346a8841e8b01b03082f962fd5217cbdd
+  docs/models/operations/CreateDistributionsResponse.md:
+    id: 60734c7511af
+    last_write_checksum: sha1:f3d5d1504b81ca10ce353d0bac13715d937f7ad8
+    pristine_git_object: d598301b42370c3d2bf4e075327526fad079bf3f
+  docs/models/operations/CreateEntitiesRequest.md:
+    id: 435d4bc039d7
+    last_write_checksum: sha1:c5721f0c665be7ced94ed4bf712b89750209d995
+    pristine_git_object: 071ae35f5ac1530e5700f8c3a323022df17ee781
+  docs/models/operations/CreateEntitiesResponse.md:
+    id: 72a86069b828
+    last_write_checksum: sha1:f35188522b49a4bf1d4bad6ea101950c090b3296
+    pristine_git_object: 1f06aed450a3c177a8ab63075e4993858217d2ae
+  docs/models/operations/CreateOAuthTokenResponse.md:
+    id: c14ef3d2de98
+    last_write_checksum: sha1:662676ddb4a07fb7e1777260fe8827529dd0f283
+    pristine_git_object: 6cfacb12364f81a5d473e139270a153ebc70a3bb
+  docs/models/operations/CreatePaymentInstructionsRequest.md:
+    id: 6ac0248527e5
+    last_write_checksum: sha1:bd85f696485831f5ecc5cc5a3b98c9b1fd452afc
+    pristine_git_object: 311124319d1613fb3955bd150939e593fddb2469
+  docs/models/operations/CreatePaymentInstructionsResponse.md:
+    id: b588bba3a8f9
+    last_write_checksum: sha1:397a8a4a7287fe031ce744d26ca8da0f83d0e99d
+    pristine_git_object: cc2e27b9c9a32e51ac9bb65701b2da2e626aebaa
+  docs/models/operations/GetContactRequest.md:
+    id: 5bfc24638d16
+    last_write_checksum: sha1:35cbe03427aedb0cb3c4f5c5c27eebb2f8fd983b
+    pristine_git_object: b054272ebd73fd38d716d438846b991fccc7f873
+  docs/models/operations/GetContactResponse.md:
+    id: 0249a83772da
+    last_write_checksum: sha1:26059e77a6ce997cc6aea75d14fb97521030a4a5
+    pristine_git_object: b1ebd16241747facb00a24cf0161d9e98a156bff
+  docs/models/operations/GetDistributionRequest.md:
+    id: acfd4fc3de50
+    last_write_checksum: sha1:7fa8e33e78874a938c6a6b20e2e929a0197cb53b
+    pristine_git_object: 30668df3b547227ce717da13cfe51f687a6f0a1a
+  docs/models/operations/GetDistributionResponse.md:
+    id: 5da0bb9e61c6
+    last_write_checksum: sha1:a6efde8d99478df1877160b8cdcbb89c9097fe5c
+    pristine_git_object: e37306ad1053cbf8ec9fb086616cf5901e20839f
+  docs/models/operations/GetEntityRequest.md:
+    id: 9f157c9b159d
+    last_write_checksum: sha1:02e66de3ec11081ca4e0801808939c2ebc70d345
+    pristine_git_object: 010d0863fe132fbb83c7945118b878998c5076f8
+  docs/models/operations/GetEntityResponse.md:
+    id: 1b8417871f85
+    last_write_checksum: sha1:a9341a4b5e0f42916ece5b9ddaed0d5e0ea5c387
+    pristine_git_object: 9abe56efb82173c8a65191258ace91b380ec4f0e
+  docs/sdks/authentication/README.md:
+    id: 45be241adfc3
+    last_write_checksum: sha1:03325055852ae5d0d237908702e0cedba46851cb
+    pristine_git_object: db27751a6a40d2d8d993572177ab24a2dbe47dfb
+  docs/sdks/contacts/README.md:
+    id: 4174fb287a81
+    last_write_checksum: sha1:a32e06b8433aae3922d96f74df425f726660878b
+    pristine_git_object: 3dcc6d36ef90bc469b2719bed9b4ff32ad87b0d9
+  docs/sdks/distributions/README.md:
+    id: 02ba58b040cf
+    last_write_checksum: sha1:a9e9b4e5e31e25d23dcf671fe46f8d0e66bc7d9a
+    pristine_git_object: 1609ed5c2d5b77b0e6c5344a4a5cd55d45550009
+  docs/sdks/entities/README.md:
+    id: a140ac5181b9
+    last_write_checksum: sha1:48a5442310a5b3de0381fca41d2f014f43ad1c62
+    pristine_git_object: 9e83559064e9cb1e526215bb8e78356522655af0
+  docs/sdks/paymentinstructions/README.md:
+    id: aa1f846002ed
+    last_write_checksum: sha1:a36798adfe2355b4002909308e20d27da88bc229
+    pristine_git_object: 937d6d878dceb46992e7dec0adde79ee49af6c14
+  docs/utils/Blob.md:
+    id: 3d9a7c4ad67a
+    last_write_checksum: sha1:7fb0a7e168a1ab9e718d816405a3fb4984d48985
+    pristine_git_object: 1239790a5e297bf0d89fdf50ccbb514bfaaea488
+  gradle.properties:
+    id: 2afbb999f001
+    last_write_checksum: sha1:077216b2bc15026e338780211279fcc552708d1e
+    pristine_git_object: 65b52316429f84a0f1441255d4ae111d85a473da
+  gradle/wrapper/gradle-wrapper.jar:
+    id: ec27dae6e852
+    last_write_checksum: sha1:f725fb1467084142d74fd7cd8eab691ab3442611
+    pristine_git_object: 1b33c55baabb587c669f562ae36f953de2481846
+  gradle/wrapper/gradle-wrapper.properties:
+    id: fbe448ebfc3e
+    last_write_checksum: sha1:cd2b4a92ef78f65abc751f0619d159ab3f8f973e
+    pristine_git_object: ff23a68d70f3cdb1e68a3761ef342d929fd90aee
+  gradlew:
+    id: 5bbfa66edb4d
+    last_write_checksum: sha1:680217d55865c44c2dbc51b106a01ca14152a615
+    pristine_git_object: 23d15a9367071145e9c79bb4ddf879d1fbe78b5d
+  gradlew.bat:
+    id: 2a45a911a8f1
+    last_write_checksum: sha1:755607dcbac0ba8adba338ef00aafc1177ceb2b5
+    pristine_git_object: 5eed7ee8452842305a18a4eb967442683808226a
+  publishing.gradle:
+    id: 0f10e722a87d
+    last_write_checksum: sha1:5ec28da780b064650ec05110072a036a7687c1ca
+    pristine_git_object: 0de6a088b3cee6236f404b876604ae83784f234b
+  settings.gradle:
+    id: 05efc8b16577
+    last_write_checksum: sha1:c41430daf1fe88a4b79c9f62a8284bda3d79b0d7
+    pristine_git_object: f03272be8fa51c7a4a7b6f18726b585377208379
+  spring/nova-java-spring-boot-autoconfigure/build.gradle:
+    id: 95f0377ce8f9
+    last_write_checksum: sha1:9e3db084ceb5e646f7b7e293c1fa22cd26fd3a5f
+    pristine_git_object: a87b4da07d38f4799143fc9e2a8755e6d26106c0
+  spring/nova-java-spring-boot-autoconfigure/src/main/java/net/nova/api/ConditionalOnPropertyPrefix.java:
+    id: 20da40876a51
+    last_write_checksum: sha1:ca22adcf52e77bab10fe201a3b8441488d321066
+    pristine_git_object: 22262ef5ba62cd7fa79677d545e0d83f75135e16
+  spring/nova-java-spring-boot-autoconfigure/src/main/java/net/nova/api/NovaJavaAutoConfig.java:
+    id: f0157316c8f2
+    last_write_checksum: sha1:65c4fd0423bc0f18362391963fc0e32d70d53da0
+    pristine_git_object: e5e2464a3a6b2127c98b2f3cf6551641af32954a
+  spring/nova-java-spring-boot-autoconfigure/src/main/java/net/nova/api/NovaJavaAutoConfigProperties.java:
+    id: ec2ed537d634
+    last_write_checksum: sha1:41dc39ce629981064f2d930cd2c5c158f3771566
+    pristine_git_object: f8c81cb2f65c9366a69ca7b077c774de4705aa1d
+  spring/nova-java-spring-boot-autoconfigure/src/main/java/net/nova/api/OnPropertyPrefixCondition.java:
+    id: 487778ac29f8
+    last_write_checksum: sha1:318a8a158cd3d2fe25105415db6feef47205cf72
+    pristine_git_object: 1fe19f8b1fcf93dae525da80eb41466477ea2552
+  ? spring/nova-java-spring-boot-autoconfigure/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+  : id: 0cc795fa65fa
+    last_write_checksum: sha1:f8894d8d02e3b0c07c57118a6e2baf95cd53cc66
+    pristine_git_object: 215bfaf25689543e537a58bdb1c66373628a53a8
+  spring/nova-java-spring-boot-starter/build.gradle:
+    id: 7596f0842aa5
+    last_write_checksum: sha1:c2b5c54587f2a88f3716221c359b1a6d6db91060
+    pristine_git_object: c17a758ee9c38d6a926b3c0c2e4e3bbd62f3a3fc
+  src/main/java/net/nova/api/AsyncAuthentication.java:
+    id: d874ce6519cf
+    last_write_checksum: sha1:bb73331f77e5f6c30222e87d40465b88d8e233bb
+    pristine_git_object: 4ea1b6afbf877cbd669a99a747995380eaae6771
+  src/main/java/net/nova/api/AsyncContacts.java:
+    id: 08b0b2c9982b
+    last_write_checksum: sha1:a73a6774fcfd766df86f1f4e033747db5957b4a0
+    pristine_git_object: 83654ab904283eb040ec1089f3dc548b78e0bd9d
+  src/main/java/net/nova/api/AsyncDistributions.java:
+    id: e3a277e21d75
+    last_write_checksum: sha1:7092dbb8881b728131b2e99787285d71a64cbaa9
+    pristine_git_object: 133f2d27bdef85bb9bd43093984372a48202ce97
+  src/main/java/net/nova/api/AsyncEntities.java:
+    id: 119a7983d924
+    last_write_checksum: sha1:d6dc290adae59924ec718144ef59011488efa86d
+    pristine_git_object: 22780e7f3483ccfef2c24c2fc0ef2e8f2582411f
+  src/main/java/net/nova/api/AsyncNovaSDK.java:
+    id: b832391a8353
+    last_write_checksum: sha1:67e403027329db5c4f366fe53a802829fecd8336
+    pristine_git_object: 632b9de57ef9131f939c48788180d4e1125cae67
+  src/main/java/net/nova/api/AsyncPaymentInstructions.java:
+    id: 3d8fb27740b8
+    last_write_checksum: sha1:6c735a287772d952b2a6e326b4d09cd0136ed83d
+    pristine_git_object: 0c1b948b80cb2c53ed74582beb8be3006c470725
+  src/main/java/net/nova/api/Authentication.java:
+    id: ea446eebc6dc
+    last_write_checksum: sha1:8c71e2a8a032e5f74ea82b60a1e6eb122345f097
+    pristine_git_object: efb3882de2c61047e384c2e8a46327e27c8a6206
+  src/main/java/net/nova/api/Contacts.java:
+    id: aae8030bb761
+    last_write_checksum: sha1:5c57da43810506ecd25778179f27fb1da3a9a9a1
+    pristine_git_object: 57220a0df567001e6f67602b5c7c5a205e184136
+  src/main/java/net/nova/api/Distributions.java:
+    id: 39e1e0bf4b71
+    last_write_checksum: sha1:9da63fc0761cdcf5f57a0b01f442514aa1fd6c3a
+    pristine_git_object: 8725ef859dc6a5dbd58081686b9a094eaaa98e0c
+  src/main/java/net/nova/api/Entities.java:
+    id: 0d85660ec14d
+    last_write_checksum: sha1:e20d8ae880e7fee83b9d4fc8c08a8baabd9b534a
+    pristine_git_object: 3267fbf4af39b238980c5449bb34ca8f36128278
+  src/main/java/net/nova/api/NovaSDK.java:
+    id: 51ab2789b024
+    last_write_checksum: sha1:c931aa8c3f109347ee0322c207d616121a4c325b
+    pristine_git_object: e64298448f65be8e006981883b65697ff2ac4659
+  src/main/java/net/nova/api/PaymentInstructions.java:
+    id: 02cb36170af9
+    last_write_checksum: sha1:b9a67c5051d9472f5e41d80968f86561e1b038a5
+    pristine_git_object: c813ff09bb68d62e9cdaf6895c9f65358052b266
+  src/main/java/net/nova/api/SDKConfiguration.java:
+    id: eb322a94d7e4
+    last_write_checksum: sha1:276ecf8c0453bdfebead9fb6ddc4f58dad26ccd8
+    pristine_git_object: 36b8aa9c9682d2bef83b180b201b0ba9c54e804a
+  src/main/java/net/nova/api/SecuritySource.java:
+    id: 3c63c1b89c30
+    last_write_checksum: sha1:f5358af7521d9dd7c28e7bcf74a2ef51168c9f9e
+    pristine_git_object: 04beb8f67623f87f7d892612cd38d126e471bc04
+  src/main/java/net/nova/api/hooks/OAuth2Scopes.java:
+    id: bcb8ec10efa7
+    last_write_checksum: sha1:ce011fbb59e6545398729a11a56fdf19c4fac380
+    pristine_git_object: f6463fb1710ffa7df6b02e01d28cd0f60632c640
+  src/main/java/net/nova/api/models/components/AchInstructionsInput.java:
+    id: cc29201fb2c5
+    last_write_checksum: sha1:7e27bbdd244b2448897e4e00829046a46ca71623
+    pristine_git_object: c0c06eb2d5518e868f2133c890abe402d0a43983
+  src/main/java/net/nova/api/models/components/AchInstructionsInputType.java:
+    id: a958804ce4c4
+    last_write_checksum: sha1:9f3cd01684b8593f564902a760334ef7fe21706a
+    pristine_git_object: 9186dfe339199502f774ba9b7d422c8ee1894996
+  src/main/java/net/nova/api/models/components/ApiErrorType.java:
+    id: 3b940f3dab74
+    last_write_checksum: sha1:34bba2106e91388f45d41ad1c1f2e0e73593b7fe
+    pristine_git_object: 44569e0e88dee4a576fb58cf0822f00330bfe1b8
+  src/main/java/net/nova/api/models/components/Contact.java:
+    id: da44a22b4528
+    last_write_checksum: sha1:0ae2becc4efb48080992a2ae0fc2d2ce421bdaac
+    pristine_git_object: 153af85c88f3995444f32d86178439d11084b13f
+  src/main/java/net/nova/api/models/components/ContactCreateInput.java:
+    id: 50f6dad71925
+    last_write_checksum: sha1:305f974a7669d7df47648a5d8c4f15aa9424a6f9
+    pristine_git_object: 45c7c73540467b7a267dd852d08301020b2f9805
+  src/main/java/net/nova/api/models/components/ContactList.java:
+    id: 4abc2336be29
+    last_write_checksum: sha1:0bd45526c0b1b054a79d5a3202f64013df4111c4
+    pristine_git_object: 23e5cc7f284429d75137b20f2ddac626ca6626fd
+  src/main/java/net/nova/api/models/components/ContactListObject.java:
+    id: 8503a3099251
+    last_write_checksum: sha1:c53359d648eecd6a9d4af00eaf4722eb5b940160
+    pristine_git_object: 57ac77e4b3e831cdba045a033e423e08de606679
+  src/main/java/net/nova/api/models/components/ContactObject.java:
+    id: 262326d72295
+    last_write_checksum: sha1:6db14a363b666af916c188a27497f3874936c65c
+    pristine_git_object: 96b294fa15d3fe369fc81f413b239e38b1953e57
+  src/main/java/net/nova/api/models/components/ContactRef.java:
+    id: 1dba31b221e4
+    last_write_checksum: sha1:12c8d975407aed563e52c89d5679b16bb25301b7
+    pristine_git_object: 3cbd8455c9e75b484a5c3deea571b242aac5de6c
+  src/main/java/net/nova/api/models/components/Currency.java:
+    id: cdfc3a522198
+    last_write_checksum: sha1:0537eb8846bd9aec21de6f5dc05ac3f022cbb1bf
+    pristine_git_object: cf0b8ee48b5919ca67cb89c23e92e50d703143e4
+  src/main/java/net/nova/api/models/components/Distribution.java:
+    id: 05d642d5b445
+    last_write_checksum: sha1:c4c62ab501ac842f8fa1af88205d8c23f323e1e3
+    pristine_git_object: 4502a529af7f90ef5149442a05577b948c8e36aa
+  src/main/java/net/nova/api/models/components/DistributionInput.java:
+    id: 43cd4dc128f9
+    last_write_checksum: sha1:faa2147b2406adce4557991171c5437036f1a6fe
+    pristine_git_object: 066d41b35aca52ed6212c187925499c36c2fcb82
+  src/main/java/net/nova/api/models/components/DistributionList.java:
+    id: 3126dd505b87
+    last_write_checksum: sha1:7cbf87e3385e52637ec45ba1e5a96268c4671086
+    pristine_git_object: 16fe320c04ef3cb523fe2a152392adf171586359
+  src/main/java/net/nova/api/models/components/DistributionListObject.java:
+    id: 44af15d267e9
+    last_write_checksum: sha1:4e755d07e425ad792537e7292c2853de99a5f5e3
+    pristine_git_object: 84a59c5c6e360f05a806c0b9df3ebd60f3763336
+  src/main/java/net/nova/api/models/components/DistributionNotification.java:
+    id: a82b30cfdc45
+    last_write_checksum: sha1:5f2dc0b304eb603927f2c0ea43a226d56081aee9
+    pristine_git_object: a50d65ab9a87315ee35d2cb2d495fbc4f907cad1
+  src/main/java/net/nova/api/models/components/DistributionNotificationInput.java:
+    id: 6a4e8323dab7
+    last_write_checksum: sha1:f0aa21a2b8e3a35df9485c9fdf5671e7542c7dc6
+    pristine_git_object: 50623d5ac484d5206d4c8fc69ba860e53bb056cc
+  src/main/java/net/nova/api/models/components/DistributionObject.java:
+    id: c39605d9d1c5
+    last_write_checksum: sha1:dd4ac45a2dd7a3ad1c7e1dbcd6bd1bc51246c2a2
+    pristine_git_object: 2731426d45011d9552e86aea996b0b94f6cae9d2
+  src/main/java/net/nova/api/models/components/DistributionPayment.java:
+    id: 1e835f7b2b6d
+    last_write_checksum: sha1:84d03f783641e1f25949960e9d290edbcea723da
+    pristine_git_object: f1b6b116586028c434b451afe124d08334571b09
+  src/main/java/net/nova/api/models/components/DistributionPaymentInput.java:
+    id: 9f9e43fb52e1
+    last_write_checksum: sha1:cf533f6bfda0dcecdf23e66a37b5e8dfc8a179a8
+    pristine_git_object: 8efc9a99d1a2d7022e919827a24339d6445e9269
+  src/main/java/net/nova/api/models/components/DistributionPaymentList.java:
+    id: 04552d83b126
+    last_write_checksum: sha1:133bb3cb848f7285a0ce27579a749eb7ac9326e6
+    pristine_git_object: c2f7c1efa87c36db38474cd0e623c0764856f750
+  src/main/java/net/nova/api/models/components/DistributionPaymentListObject.java:
+    id: 7e765431ccc2
+    last_write_checksum: sha1:97ee1c79f49457f1d142a642fea68cdd79ca20cb
+    pristine_git_object: 968fc9e089481ca48a835a4441164ab7d1b6e7fb
+  src/main/java/net/nova/api/models/components/DistributionPaymentObject.java:
+    id: eee8eb52c6bc
+    last_write_checksum: sha1:48ace5297ead29aa61b79655ab3ebedc1a95c192
+    pristine_git_object: 6d188628a8c53202cd48018b971d3543a20cef65
+  src/main/java/net/nova/api/models/components/DistributionPaymentStatus.java:
+    id: d20105714da4
+    last_write_checksum: sha1:a512f053b5779084ba2fdc8ae71701cefc522cc1
+    pristine_git_object: 1403ceae79fc856e2ee49c8bc24725d933d3e2da
+  src/main/java/net/nova/api/models/components/DistributionStatus.java:
+    id: d9ecfbe9e54a
+    last_write_checksum: sha1:6fe3097722a3376e8de3fce172c55240aba85097
+    pristine_git_object: 33bbf501870e63a7bdfa64e8332afa14f9356547
+  src/main/java/net/nova/api/models/components/DomesticWireInstructionsInput.java:
+    id: ffb6bc0ff444
+    last_write_checksum: sha1:b84087a1ce4f57ab24e4adea1553b04dc07af3bf
+    pristine_git_object: 77fae5ebf540b7dcad683dc6cb4de28084c0a4d1
+  src/main/java/net/nova/api/models/components/DomesticWireInstructionsInputType.java:
+    id: 7598ac5d8963
+    last_write_checksum: sha1:77ba33e9597fe3816885737c842521c8db75a797
+    pristine_git_object: a2e71f78b5cd8e1c4c03a67cd9e1a563e0cbafbe
+  src/main/java/net/nova/api/models/components/Entity.java:
+    id: 9947256a7fa5
+    last_write_checksum: sha1:38cd7ef208c0510e050ebfc83c0aeff5fd6af2a6
+    pristine_git_object: a08c91ca9bc289b4e7788cc833ef3244df1c7509
+  src/main/java/net/nova/api/models/components/EntityCreateInput.java:
+    id: 8eaf45d85aa5
+    last_write_checksum: sha1:5bb90bdc835680cb2c1a1b0c249d2e58dcd5d449
+    pristine_git_object: a4ddc0b9de1f96b68c247399fac0ac21b621cd65
+  src/main/java/net/nova/api/models/components/EntityList.java:
+    id: b0c6a5239125
+    last_write_checksum: sha1:a601aeec613df7dd8a03502e0f800a8c4ac58395
+    pristine_git_object: 140ba7ae01b6c2a151cd7f174468927a8a1f51ce
+  src/main/java/net/nova/api/models/components/EntityListObject.java:
+    id: 3485f6105279
+    last_write_checksum: sha1:26127d170f6c12e75dc84c6983fc531fd88f6a7d
+    pristine_git_object: ac36b5dc165bfe491888e9b9631863ae79af4e2f
+  src/main/java/net/nova/api/models/components/EntityObject.java:
+    id: 628a687d862d
+    last_write_checksum: sha1:c34f31ab60b224479fe17e289bed971e496afc6f
+    pristine_git_object: 6408b5ff76a78e269b12825d3517fe317311439a
+  src/main/java/net/nova/api/models/components/EntityPaymentInstructions.java:
+    id: 34cb6d9c2884
+    last_write_checksum: sha1:ef1b4f2151b6c3d16748b386a991bae673a9179d
+    pristine_git_object: 98dd99b6926b86094b587b8f61b23c64e2798c90
+  src/main/java/net/nova/api/models/components/EntityPaymentInstructionsInput.java:
+    id: 7d0eb9a60d4b
+    last_write_checksum: sha1:dc0553a55c8a2c71637d9f664efaeb07229db149
+    pristine_git_object: ca836f67132cb7e62cef11424ef5c9b37b0013ca
+  src/main/java/net/nova/api/models/components/EntityPaymentInstructionsList.java:
+    id: a825d03d3f0b
+    last_write_checksum: sha1:515268b95c8b27b671455714e3f92d7e94402bcc
+    pristine_git_object: 2df7c534b0efce75ce86721d67241bb78286da43
+  src/main/java/net/nova/api/models/components/EntityPaymentInstructionsListObject.java:
+    id: c92c7ab6a7a6
+    last_write_checksum: sha1:3b556196b1f6b9baacb4c66aa19739d08def293a
+    pristine_git_object: 40c4978962045676b90bfc73b6a7e3955c338742
+  src/main/java/net/nova/api/models/components/EntityPaymentInstructionsObject.java:
+    id: d7908eed8139
+    last_write_checksum: sha1:54eec7e92eea2f2648c38fcce3f7465d6daffa85
+    pristine_git_object: 0ec0d5177999fb8ee2f5911460e2408cf8ca5761
+  src/main/java/net/nova/api/models/components/EntityType.java:
+    id: 08d2e3106158
+    last_write_checksum: sha1:80f4469ccc987ed941c840acd8831cffb90d3505
+    pristine_git_object: 13c4e64aa92a189046eef683887d5a7efe333ecc
+  src/main/java/net/nova/api/models/components/Error.java:
+    id: 0df36695c65f
+    last_write_checksum: sha1:5618fcfb8643c7bb912e4144b43d19e4299b4657
+    pristine_git_object: af7a404705d8094c3eb7bd625d19fb71fc65e6fc
+  src/main/java/net/nova/api/models/components/ErrorObject.java:
+    id: 46b11feec4e7
+    last_write_checksum: sha1:885f454b934b30a9fdeefe55b06bd8da07081b7a
+    pristine_git_object: 7ffae02a6f5c719accdefb6aa4b9e57759632bd3
+  src/main/java/net/nova/api/models/components/GrantType.java:
+    id: 989fdd130b3f
+    last_write_checksum: sha1:d948a1a276d6658ace2e5e07f6fc9ab4e324527a
+    pristine_git_object: 86f19db2a3027d59c1fc16e6b5925f620e68b488
+  src/main/java/net/nova/api/models/components/InternationalWireInstructionsInput.java:
+    id: 1410f8f1ea55
+    last_write_checksum: sha1:f21f779d9bf76184bf96b7f661f02e7b76b77abe
+    pristine_git_object: 6de38d679ccc95a39ae284861ec1346471ac376d
+  src/main/java/net/nova/api/models/components/InternationalWireInstructionsInputType.java:
+    id: 9a5fc68e97b7
+    last_write_checksum: sha1:8d33f4f42c463ba2e07d250f05c57e7663abf6e6
+    pristine_git_object: 14fe013725c0b78fc974b391c9657d1dc59809c0
+  src/main/java/net/nova/api/models/components/OAuthTokenRequest.java:
+    id: 0a3c0094db42
+    last_write_checksum: sha1:ec60461863c427139411d75ca759b15ebb0bbfef
+    pristine_git_object: 8296331cdca09c930f7b93844da3cd2bdd080509
+  src/main/java/net/nova/api/models/components/OAuthTokenResponse.java:
+    id: e46ca3713a92
+    last_write_checksum: sha1:dbefca359897252d8403fade6152e30f696ff4f2
+    pristine_git_object: 8930ba6ed14d9ca07dfa602a85a8bee494ee01cf
+  src/main/java/net/nova/api/models/components/PaymentInstructions.java:
+    id: c5abd5f1827c
+    last_write_checksum: sha1:b725775e0c3f85b8d62fc8e790e83326e84d5d3c
+    pristine_git_object: f14b12b8c9288a5b28745bdb0a283db5925a23a4
+  src/main/java/net/nova/api/models/components/PaymentInstructionsInput.java:
+    id: d48f5a6b0a5c
+    last_write_checksum: sha1:cf00ea44e6a8c7c1e8772a4c9eff4f8652871290
+    pristine_git_object: bbc2ade2f316319276a618e3af7a33c1594da157
+  src/main/java/net/nova/api/models/components/PaymentInstructionsInputTypeIdResolver.java:
+    id: aca5d08485d9
+    last_write_checksum: sha1:bfccca449d9068e70ffa6f9af4aab882bf170d7a
+    pristine_git_object: dd9f249b67061dc2e6e54c5e27fa5d48c2e7f16d
+  src/main/java/net/nova/api/models/components/PaymentInstructionsList.java:
+    id: 6b6b49e2e529
+    last_write_checksum: sha1:0b0d0379d2df569e8a8d8474ae76e5b027a23a46
+    pristine_git_object: 109a52ffe8fca2c9235ca4d9275a6acee8475f94
+  src/main/java/net/nova/api/models/components/PaymentInstructionsListObject.java:
+    id: 6246dcd69d01
+    last_write_checksum: sha1:50038151429969faabff8fb2e17424ed41abbf4c
+    pristine_git_object: 7635928650ec237616c1fb8e9eac9a52d7781431
+  src/main/java/net/nova/api/models/components/PaymentInstructionsObject.java:
+    id: f55c89d1ab88
+    last_write_checksum: sha1:6a2f76d7a03e9d4850cfecf9c6bf65d7d82b90de
+    pristine_git_object: f3c4b5be8d8b81b7ba83548542f1f6dc8013db9e
+  src/main/java/net/nova/api/models/components/Security.java:
+    id: 5c16c4ff80fd
+    last_write_checksum: sha1:6ed3ab21fcf7723fd69a10adc60c4cd024af9308
+    pristine_git_object: f4441b98191377c91ae691f3628bae002f588d72
+  src/main/java/net/nova/api/models/components/TokenType.java:
+    id: a78df7977a86
+    last_write_checksum: sha1:85919e820ba681c418867ac34979aec0ff0da9e0
+    pristine_git_object: 0c32b9e685d4765cb2467ced21f7abcc4f5be328
+  src/main/java/net/nova/api/models/components/UnknownPaymentInstructionsInput.java:
+    id: a0b809601cd4
+    last_write_checksum: sha1:d3ad1beb098ca6284ef21d677421d87143143214
+    pristine_git_object: de0fb48e80cbcd3226eabe528c1e9052acb93cac
+  src/main/java/net/nova/api/models/components/WireAddress.java:
+    id: fce0cdd8abea
+    last_write_checksum: sha1:636a9c77aca6cc89f484a7239d8c088633542132
+    pristine_git_object: 47870aff8b80a5e97f2961555ef683147d976709
+  src/main/java/net/nova/api/models/errors/APIException.java:
+    id: a6ef57099496
+    last_write_checksum: sha1:47a4794e9a991cf2c810e5d05a86fdecfd4a9669
+    pristine_git_object: 2f5427f6167a8288b850bb097f6dd696e0c60589
+  src/main/java/net/nova/api/models/errors/AsyncAPIException.java:
+    id: b7b69b2a23cc
+    last_write_checksum: sha1:ab5601418c53dde16e642052ede8f303e05e71a3
+    pristine_git_object: 493859b15af5aec6ac2782caf44e584518bdd057
+  src/main/java/net/nova/api/models/errors/AuthException.java:
+    id: 0b60413ee45a
+    last_write_checksum: sha1:1ef911e54c1d595a2a7c219009eb526a9f561097
+    pristine_git_object: e1644176cfa808eff688246ffa109c76222d4bab
+  src/main/java/net/nova/api/models/errors/Error.java:
+    id: 03fec4315353
+    last_write_checksum: sha1:9edd9f326852d4300fa19229725132771ad7d087
+    pristine_git_object: 9686455794125cc2c02e3c0cebab902ba023f195
+  src/main/java/net/nova/api/models/errors/NovaSDKException.java:
+    id: 30c12bd8d4af
+    last_write_checksum: sha1:ddfa4cfe8330a1c528f0e99f8074ed1da7870fd4
+    pristine_git_object: d833557ec2990f77f36efb5c7002a68897e2d0c1
+  src/main/java/net/nova/api/models/errors/OAuthError.java:
+    id: cf3c45707416
+    last_write_checksum: sha1:84e2515f19c2a2b47a5d42c4d592fddf9f1a6abb
+    pristine_git_object: a93883f8217895fe5c60eb945b12562915770b24
+  src/main/java/net/nova/api/models/operations//async/CreateContactsRequestBuilder.java:
+    id: c2838965cfd8
+    last_write_checksum: sha1:2c855ee277ce52d6e2851f02c449295b4518e537
+    pristine_git_object: 4f69a9c6eea93014d6976728174884a7a058930b
+  src/main/java/net/nova/api/models/operations//async/CreateDistributionsRequestBuilder.java:
+    id: 9de865b625a0
+    last_write_checksum: sha1:132520fb2c27586b62e9f32cba93b7713bdf9135
+    pristine_git_object: 15c414392fabbb960bceb43d48b8d438a011b5df
+  src/main/java/net/nova/api/models/operations//async/CreateEntitiesRequestBuilder.java:
+    id: ef81d840d9fe
+    last_write_checksum: sha1:9f95ff2f459450a520c8f474e693ffa7be409d96
+    pristine_git_object: b8ed2094dd53dfd1c59d2c815a90b353843b8b2e
+  src/main/java/net/nova/api/models/operations//async/CreateOAuthTokenRequestBuilder.java:
+    id: 73330b41b27f
+    last_write_checksum: sha1:4c5796d8360c67d60ba928d51fb88fe5f564811e
+    pristine_git_object: 6ebec06941c0c5914d1ef7930cd59e5d1c827d06
+  src/main/java/net/nova/api/models/operations//async/CreatePaymentInstructionsRequestBuilder.java:
+    id: 7dce8d712f25
+    last_write_checksum: sha1:735efed6722cb4fd792d9d43c09a0a142c091140
+    pristine_git_object: 36c397fe894d977037e90a9b3396f1964a13704f
+  src/main/java/net/nova/api/models/operations//async/GetContactRequestBuilder.java:
+    id: 3a8a5e725caa
+    last_write_checksum: sha1:abe88177b81bedf845c6052a866a0f2e47ed7210
+    pristine_git_object: 4c15f5c3e40c440e7101e5d66ea292ac60dcb14b
+  src/main/java/net/nova/api/models/operations//async/GetDistributionRequestBuilder.java:
+    id: 4ebde18aa005
+    last_write_checksum: sha1:48e0aa7946475f20dfad48af0347330b9b3a0d81
+    pristine_git_object: 1b33f6c788b88d63c0743dab7a3d3fe962642b7a
+  src/main/java/net/nova/api/models/operations//async/GetEntityRequestBuilder.java:
+    id: 2a5ad08c6ee3
+    last_write_checksum: sha1:81ddf6c45bfafcb1ce236f1501eeb2278b299797
+    pristine_git_object: 913deca94f9f329f5230b4d3b60c2c4d7df53e36
+  src/main/java/net/nova/api/models/operations/CreateContactsRequest.java:
+    id: 632d2e8d216c
+    last_write_checksum: sha1:7effd9e03697bbea8dde0bf5f499c30f04cc9fa9
+    pristine_git_object: fd52242e77366afddb9707d175d3aa263398175e
+  src/main/java/net/nova/api/models/operations/CreateContactsRequestBuilder.java:
+    id: 73010a8dc551
+    last_write_checksum: sha1:bb8519b7d82b52ac205e754eb837d3c5f8a4eb11
+    pristine_git_object: 259fc93987d73b97721bbc621e22ab1f4ef2d0ec
+  src/main/java/net/nova/api/models/operations/CreateContactsResponse.java:
+    id: 13aee48ce8fe
+    last_write_checksum: sha1:436f6b40984ab2a9b45d0b83bed8affadfc749d4
+    pristine_git_object: 4d30ee5cc9382778531b8e00e1fb542914d4938d
+  src/main/java/net/nova/api/models/operations/CreateDistributionsRequest.java:
+    id: 6b152e0583dc
+    last_write_checksum: sha1:6f71972ffaf38bd91dcb0d490f421cdae1136f5d
+    pristine_git_object: e9f3e9b3e78712297c0e687f0c54c755268f3cad
+  src/main/java/net/nova/api/models/operations/CreateDistributionsRequestBuilder.java:
+    id: a345a0391966
+    last_write_checksum: sha1:cf8120078eea58bc9d5b9ae6b5457e993d556423
+    pristine_git_object: 2365a4ec333dff8fbd2c514b0462c923f44885ad
+  src/main/java/net/nova/api/models/operations/CreateDistributionsResponse.java:
+    id: 0b67f3ee212d
+    last_write_checksum: sha1:80113d5dc4169979bf7606f74ca27b981e89ce60
+    pristine_git_object: 506671c38955a1ecf509107a8f3147195226ae4f
+  src/main/java/net/nova/api/models/operations/CreateEntitiesRequest.java:
+    id: 66fa8b18ea1f
+    last_write_checksum: sha1:441f44a8da8bcb8e9ddb84f29f3d4e657e157482
+    pristine_git_object: aea999242ddee3394d7c0162fc60393c5f0d45af
+  src/main/java/net/nova/api/models/operations/CreateEntitiesRequestBuilder.java:
+    id: d04ee8bfc79b
+    last_write_checksum: sha1:2b82430d0165cca10feff287cfb6b1d00bbba493
+    pristine_git_object: 8876306f4b06aa31a5fadc313e28dbc8f8ee284f
+  src/main/java/net/nova/api/models/operations/CreateEntitiesResponse.java:
+    id: 5f2efc521cd2
+    last_write_checksum: sha1:fc23de2f1e19553bb9e5fbfd55b0604836161edb
+    pristine_git_object: 8e33bf9a6468fae29a3175fca31e4c5666ff391a
+  src/main/java/net/nova/api/models/operations/CreateOAuthTokenRequestBuilder.java:
+    id: 6ab7baac2762
+    last_write_checksum: sha1:0bc8c6020a2f343b2849a469d8f2c25ebc5ca7f0
+    pristine_git_object: c4a7437e38199112b03c14856a40065583acfee2
+  src/main/java/net/nova/api/models/operations/CreateOAuthTokenResponse.java:
+    id: 33a22fccc9fb
+    last_write_checksum: sha1:5e01fe2e7f06606b38b4dadb7fca88cdcb0cffb4
+    pristine_git_object: bde64471d7989ffcfe8726cbb1665f02eb69a524
+  src/main/java/net/nova/api/models/operations/CreatePaymentInstructionsRequest.java:
+    id: e1ab474350d0
+    last_write_checksum: sha1:825934f5022fd6eab50b6213d85a966ba9259ddc
+    pristine_git_object: 82c333e39414de05360d8b385a586ee1a584f0a7
+  src/main/java/net/nova/api/models/operations/CreatePaymentInstructionsRequestBuilder.java:
+    id: d0bac2b8eb33
+    last_write_checksum: sha1:5f9e3f4f1db71201103b4aef7df9f21eaa75d4cd
+    pristine_git_object: 35b279f7885583a2324f8fd94fef43359e232e54
+  src/main/java/net/nova/api/models/operations/CreatePaymentInstructionsResponse.java:
+    id: a9cc630e2692
+    last_write_checksum: sha1:b4ef04f0b5d71b8b68a59233c340a6bc92b6b01d
+    pristine_git_object: 8c414686cd383d427510e7850f54faacc099f1fb
+  src/main/java/net/nova/api/models/operations/GetContactRequest.java:
+    id: 2d59ebc3771b
+    last_write_checksum: sha1:13ccf6a485319c27d3d853864ccac866e194b6ff
+    pristine_git_object: 6263ef3b5ebe16702ef3fc921ca694a9586f72a8
+  src/main/java/net/nova/api/models/operations/GetContactRequestBuilder.java:
+    id: 334ea1c4f25c
+    last_write_checksum: sha1:b7aeaf5de9b8600e0c69d51d5670f639f7218c9e
+    pristine_git_object: df85295dd52732e6826ce91d92ddf52fb8c87756
+  src/main/java/net/nova/api/models/operations/GetContactResponse.java:
+    id: f2a8b6fb51d7
+    last_write_checksum: sha1:3e4bda186e7b93a8e6cf2264b4c3d444194ac984
+    pristine_git_object: c552ed1206d10a28215da4c007c09038238829ac
+  src/main/java/net/nova/api/models/operations/GetDistributionRequest.java:
+    id: bf6fffc58527
+    last_write_checksum: sha1:1a21ff4711c14fdf6f0123e1ace8579f3b4b993a
+    pristine_git_object: 4ee9458c048cecf537d490c9edc7157f1406507e
+  src/main/java/net/nova/api/models/operations/GetDistributionRequestBuilder.java:
+    id: e0bd5ef76df6
+    last_write_checksum: sha1:eee695cbe19e257bfc35e76771420d732ce7d2ec
+    pristine_git_object: 75a847f3f68cd0753ed1ee8bc1f8db9d9e14692d
+  src/main/java/net/nova/api/models/operations/GetDistributionResponse.java:
+    id: 2841abc74e45
+    last_write_checksum: sha1:44d373c1d721a7afbcf3af1c81dc374e8df37655
+    pristine_git_object: 2b7ff20c2d9c5fc18fb7bef74fb6ad72aae0a534
+  src/main/java/net/nova/api/models/operations/GetEntityRequest.java:
+    id: c1073dbc536e
+    last_write_checksum: sha1:f7a70f67db5fcdafc22bf50a82908637917329df
+    pristine_git_object: 51dcdeff2ded9190fa6a450aa8ccebbc040f8a71
+  src/main/java/net/nova/api/models/operations/GetEntityRequestBuilder.java:
+    id: 76da8cb35675
+    last_write_checksum: sha1:2ce34652d0910b37cd5d0ea25d4df97280fb98a2
+    pristine_git_object: 8b1764806c4099a38d5e3858fbedbff565d6dddf
+  src/main/java/net/nova/api/models/operations/GetEntityResponse.java:
+    id: 68f1b5a28191
+    last_write_checksum: sha1:5752960962cb110ae7d1cabdedcf0a7a92d10ed9
+    pristine_git_object: 7b2c9f60795408d7899a0f4e8b5a37151655b68e
+  src/main/java/net/nova/api/models/operations/async/CreateContactsResponse.java:
+    id: 1b06445cefa1
+    last_write_checksum: sha1:552598c12972c44cad7003928869d973d77d33fb
+    pristine_git_object: bc15b66a144fa9fb1f727f3c10617e2c68eb75e7
+  src/main/java/net/nova/api/models/operations/async/CreateDistributionsResponse.java:
+    id: c9bbe5a56d25
+    last_write_checksum: sha1:1de2d268babfd8298f74d8ba6a5ccc0e72cd1f54
+    pristine_git_object: 75fd6c600ba970ec021e4d22fe1b8317a10c0806
+  src/main/java/net/nova/api/models/operations/async/CreateEntitiesResponse.java:
+    id: 66b13ba59760
+    last_write_checksum: sha1:ff48a1c617adc88e43eee3b549a191046abe898f
+    pristine_git_object: 1f099b8b97a3102347fb1ae6e087cfb66dad07fa
+  src/main/java/net/nova/api/models/operations/async/CreateOAuthTokenResponse.java:
+    id: 48aebd841e12
+    last_write_checksum: sha1:d64675fffc83a84129a9b54ecc9a6d064e38afe9
+    pristine_git_object: 9a637383f98da298cc02c9d200897786b28ed286
+  src/main/java/net/nova/api/models/operations/async/CreatePaymentInstructionsResponse.java:
+    id: 4b0a9d522525
+    last_write_checksum: sha1:7ea8b4c4cc24060c8c666cf1ed9299376503f6b5
+    pristine_git_object: c876ed59aad9ec8dac90403d1bd1d2416f261972
+  src/main/java/net/nova/api/models/operations/async/GetContactResponse.java:
+    id: 82240d13c9e1
+    last_write_checksum: sha1:64bf466bfed7a59ec6ee0901a72974167eb3be9a
+    pristine_git_object: 0b707e4b34371d91751b5bb9daa6321716de4ec7
+  src/main/java/net/nova/api/models/operations/async/GetDistributionResponse.java:
+    id: 07856df85497
+    last_write_checksum: sha1:76b44a023230bee6557738384af5a57b962ac3c2
+    pristine_git_object: c2fc03dc5059d7f3ac04732826a4f78e3cd9ecd9
+  src/main/java/net/nova/api/models/operations/async/GetEntityResponse.java:
+    id: 442be2bb8ee7
+    last_write_checksum: sha1:26fd4f6dd4a11820ccc5cd5029b20c4b6c84ceec
+    pristine_git_object: a67bb3a37f47cd7e5f6b72f134ccd4ef57f314dd
+  src/main/java/net/nova/api/operations/CreateContacts.java:
+    id: 30bef4e6db34
+    last_write_checksum: sha1:dbea5908ea190d22a22919f3d0f67da8b39f20eb
+    pristine_git_object: f45c32ea2a976b1f7ccdf810d6435102f178742d
+  src/main/java/net/nova/api/operations/CreateDistributions.java:
+    id: dd92e8294899
+    last_write_checksum: sha1:1dcaac5c3b8a7c3549c195aef75b3e93b7d270a5
+    pristine_git_object: 6dcccf4f09c763722a9d5b61014e37c5a827c63f
+  src/main/java/net/nova/api/operations/CreateEntities.java:
+    id: dd7cb151af29
+    last_write_checksum: sha1:802bfb2bca6c133e70e633a46e09f658c27689de
+    pristine_git_object: c21599c4f24e5d7cd751462bff8b2a8557b96e90
+  src/main/java/net/nova/api/operations/CreateOAuthToken.java:
+    id: 0d2e47d5b7d1
+    last_write_checksum: sha1:9954e0e8ad6c8939cc9e594d70b9bcac9993e7fc
+    pristine_git_object: ae7f4f5aa5b1d53e944a808f0cdc81128d192ee1
+  src/main/java/net/nova/api/operations/CreatePaymentInstructions.java:
+    id: 05f115dd4b87
+    last_write_checksum: sha1:b1e2cd70f92c52c3689089513a917447399ed444
+    pristine_git_object: e6fccbcc0954649443a2fe8a7839d906d11f9566
+  src/main/java/net/nova/api/operations/GetContact.java:
+    id: ae321be08aaf
+    last_write_checksum: sha1:bb59605b572001109443b063d3d061d9587fb01b
+    pristine_git_object: b932cf740e22302a5fcd3338cabeeccebb565322
+  src/main/java/net/nova/api/operations/GetDistribution.java:
+    id: 26cd1a5f4388
+    last_write_checksum: sha1:8b26edf485b5843a1742e953c30140a802088142
+    pristine_git_object: 51ba1244000c13a4354c25b444fc8e0516fac17f
+  src/main/java/net/nova/api/operations/GetEntity.java:
+    id: bcee54179106
+    last_write_checksum: sha1:7efdc2d935936c52235ad0e6c82badef598601e8
+    pristine_git_object: 997a0544e8dcce5c28bbfff66be907d48ea0eb00
+  src/main/java/net/nova/api/operations/Operations.java:
+    id: e2e116b812ba
+    last_write_checksum: sha1:12eb4afb44d5005791e6eae121f85675080029fe
+    pristine_git_object: b3c7eb13c90d8688f535dc67e08895b99a8bf32f
+  src/main/java/net/nova/api/utils/AsyncHook.java:
+    id: a4f12aba2c16
+    last_write_checksum: sha1:35d8e8737a5e6c8f844118b76f33fafd9a3cd9f2
+    pristine_git_object: 68533bbb00d10699ebc452109ca925885a56cf47
+  src/main/java/net/nova/api/utils/AsyncHooks.java:
+    id: 484bea2a2959
+    last_write_checksum: sha1:9e79147f529e6d83c742f3621854ec41cc148fe5
+    pristine_git_object: cccee5196e886bd6a8378956036dd5ae931d02e1
+  src/main/java/net/nova/api/utils/AsyncResponse.java:
+    id: 6df465f3b2f1
+    last_write_checksum: sha1:7f6c149dce853dc219a65c9f2c36432edc3a8ab4
+    pristine_git_object: 3a053ffe809d605eba3ef79b7d0c49626729c5d4
+  src/main/java/net/nova/api/utils/AsyncRetries.java:
+    id: bb948f4ea760
+    last_write_checksum: sha1:17db187f998f7c4df6b03a3b8e79ae2b341ca757
+    pristine_git_object: 4f7437da87969e2ccbeed5c539d44ce44ac3c0d7
+  src/main/java/net/nova/api/utils/AsyncRetryableException.java:
+    id: 22ab2832fd6d
+    last_write_checksum: sha1:64d26b9f27de6a935034cf8b9473b95199a13efa
+    pristine_git_object: fc6628b49f5d4160d1f424150c307f7541301232
+  src/main/java/net/nova/api/utils/BackoffStrategy.java:
+    id: d1274ed69b37
+    last_write_checksum: sha1:49f27ebcc6033bace4efc8be33952223ddbf0357
+    pristine_git_object: a74e8a421de64bee722d373f0f0c5424173d14bc
+  src/main/java/net/nova/api/utils/BigDecimalString.java:
+    id: 9b5459fed6b5
+    last_write_checksum: sha1:47d560a1c1ca53c8b9b59a73bc4f9dd08177f7c8
+    pristine_git_object: 5b3802a83551870ad54e17cce5bd58f7e799c314
+  src/main/java/net/nova/api/utils/BigIntegerString.java:
+    id: 4c1fab7628a5
+    last_write_checksum: sha1:e59d78c75afcdf7165bf84fc1807079cbd7450b2
+    pristine_git_object: 819114e41bbf55991a20c27219447434087be86f
+  src/main/java/net/nova/api/utils/Blob.java:
+    id: a1f93a74ac3d
+    last_write_checksum: sha1:c99226bfd93ebe5a358dfec605259c1060119bfe
+    pristine_git_object: ac0f7d5ae9805b7bc9d184feec9e936c5d2acaa7
+  src/main/java/net/nova/api/utils/BlockingParser.java:
+    id: 789442de5997
+    last_write_checksum: sha1:26dca5bb93e80a856ffc0d2ed3e8b9fb4e73c368
+    pristine_git_object: befca7bd8e26a21f815e333d09a87908b88c32d0
+  src/main/java/net/nova/api/utils/Constants.java:
+    id: 65067bf19c44
+    last_write_checksum: sha1:95d9dda5f5b9da59ad030c3e9e391867b9721526
+    pristine_git_object: f70e306c4868bc6b1ae2c627129caeb0645f8a93
+  src/main/java/net/nova/api/utils/CopiableInputStream.java:
+    id: 0c2b6cc0e433
+    last_write_checksum: sha1:91a5de469aa729e881c9bbea002151ab5c611ed1
+    pristine_git_object: 1fd1a28ffda8d4efc1ad32a9279b819cfb9f28c2
+  src/main/java/net/nova/api/utils/Deserializers.java:
+    id: dfe4e51b9d2c
+    last_write_checksum: sha1:38fd919e6de82826c1974aa384636cf5e40f5aec
+    pristine_git_object: 42037389c6d231f4514a83e550debf5166bf8d8f
+  src/main/java/net/nova/api/utils/EventStream.java:
+    id: 7ca6ecc7354d
+    last_write_checksum: sha1:608ebd786a49eb776d0dd3b7f9798fb922022df6
+    pristine_git_object: 84971d834ec343f01ee08f06722ecd571673bfb5
+  src/main/java/net/nova/api/utils/EventStreamMessage.java:
+    id: 8b5a0af6dae5
+    last_write_checksum: sha1:ab33852fb191de16e011bf300faf96656ff8f1d5
+    pristine_git_object: f50fd8d736fa039784a06f5ddcb231c8e7090ddb
+  src/main/java/net/nova/api/utils/Exceptions.java:
+    id: 6078964f247e
+    last_write_checksum: sha1:2b29299300f1a25ec3ed088773e8657235fe1a0a
+    pristine_git_object: 8ecdc892c232a4d194d7880e0a6afb4b4e4a7095
+  src/main/java/net/nova/api/utils/FormMetadata.java:
+    id: a1e0b37e22db
+    last_write_checksum: sha1:5a88203c908dd4ce6e54abbd607efcdfe9e5acec
+    pristine_git_object: b1b6095646b9b5e99ee469d68bbb5bbe32d15104
+  src/main/java/net/nova/api/utils/GenericTypeIdResolver.java:
+    id: 5948a056af0e
+    last_write_checksum: sha1:38e60923d4db910ab81861931d21535dc5378018
+    pristine_git_object: 69b9fa55a7d2d1398ecfffa074b5bc2c73e4a281
+  src/main/java/net/nova/api/utils/Globals.java:
+    id: ace5740cd244
+    last_write_checksum: sha1:75f3e02ea078960146db283be26524c6a2587479
+    pristine_git_object: f342634d1ce65609951e3195b60f3b2a411755f5
+  src/main/java/net/nova/api/utils/HTTPClient.java:
+    id: fc76825ce129
+    last_write_checksum: sha1:34eef98542efefcde29e59b21dbef6868a250ac0
+    pristine_git_object: 4e58bbae7f3f8370aa5b376339ea83b85b3d3501
+  src/main/java/net/nova/api/utils/HTTPRequest.java:
+    id: d576fc59b2f0
+    last_write_checksum: sha1:dd68b9d2ab0f96274d6909ab0383891ee51d18a6
+    pristine_git_object: 1fd88541b0b9ba241e902a1200b2885b841220cf
+  src/main/java/net/nova/api/utils/HasSecurity.java:
+    id: 67cc7454eef7
+    last_write_checksum: sha1:2fc831ce7f04ac6ccd5ba63a3b10d7104114f213
+    pristine_git_object: 3b3f8be0aae69d8b90f09bd3ad40e9df8886e214
+  src/main/java/net/nova/api/utils/HeaderMetadata.java:
+    id: 203a621c776b
+    last_write_checksum: sha1:9da33717550f8d79fa68d02379554fc0140b7511
+    pristine_git_object: ab0395a829a0738cd1ec80bede4a831c2a7d8a81
+  src/main/java/net/nova/api/utils/Headers.java:
+    id: 1b680c9d861e
+    last_write_checksum: sha1:441c4937f87d59d5e4eb6351ba5eb6c1d9e1c9f6
+    pristine_git_object: c73b368603d90cb5317d8c9aa180167a4aeff8ee
+  src/main/java/net/nova/api/utils/Helpers.java:
+    id: b7647d338800
+    last_write_checksum: sha1:201d86e3030399fba51e0f097e479e3f8ec3e4fc
+    pristine_git_object: 5061d1199faa2f7af10eef85dc78a5e18f2f1076
+  src/main/java/net/nova/api/utils/Hook.java:
+    id: 518f6d698942
+    last_write_checksum: sha1:985d218acb0227114dbd1d91817c99222714b0cb
+    pristine_git_object: bd3db47f3f197475b10798d54613be72057d6599
+  src/main/java/net/nova/api/utils/HookAdapters.java:
+    id: b57b85c65fba
+    last_write_checksum: sha1:c8e815e22938dea7f7c6b03e8ed89e9264b81028
+    pristine_git_object: 591b2d7f9e6884782031b7da64ec5e2901230c5f
+  src/main/java/net/nova/api/utils/Hooks.java:
+    id: b03313a078ef
+    last_write_checksum: sha1:17d1e6c84ece30f6e33a6fc518ae40c296451ca9
+    pristine_git_object: 1cb69d1e90c2c164e8d5d96a2a0e1be50d15a063
+  src/main/java/net/nova/api/utils/JSON.java:
+    id: 4950559642b7
+    last_write_checksum: sha1:4c97bec0e013cc7775bbe55e6d5762cc79d9257f
+    pristine_git_object: 666918273a9a86fc0b467f58df99f4958f8dc6e3
+  src/main/java/net/nova/api/utils/LazySingletonValue.java:
+    id: f94df35dcc03
+    last_write_checksum: sha1:f4ebc860ebee47eb29cb0122760b44da40b995d3
+    pristine_git_object: 0d10680afd0d2d155053ee9e64774e54ebad9bff
+  src/main/java/net/nova/api/utils/Metadata.java:
+    id: 86b4a71edeaa
+    last_write_checksum: sha1:ba6e540f5b0e1fdd2c9342d7dbdcaa9df53223c9
+    pristine_git_object: 6f524fd4984184cb0d8ad1dd46e29fb853b9d16a
+  src/main/java/net/nova/api/utils/Multipart.java:
+    id: e4b41a43e446
+    last_write_checksum: sha1:f376cf66ad5e2b1f88d41df37a2dcbd1be47622d
+    pristine_git_object: 37a7bc69d9e9e87e57007a2e7c83c28c43af3f12
+  src/main/java/net/nova/api/utils/MultipartFormMetadata.java:
+    id: 65b13e921000
+    last_write_checksum: sha1:ea1d87778c5df4e1ae67455da0ca338f818dc8c4
+    pristine_git_object: 423af982567f88356f3033862f26bb517f0b3537
+  src/main/java/net/nova/api/utils/NameValue.java:
+    id: 2028aaaefd66
+    last_write_checksum: sha1:f51959bf159034295732291538300183965d335d
+    pristine_git_object: 33f61e35adafce2d2ed8ff9710a048101760f68f
+  src/main/java/net/nova/api/utils/NonRetryableException.java:
+    id: bb5f618ed8e4
+    last_write_checksum: sha1:bb1200347bb39a5c85013a2e51e5379f857caecf
+    pristine_git_object: 641b7049b736538586065328f0a7a0e682bfca73
+  src/main/java/net/nova/api/utils/NovaJavaJacksonModule.java:
+    id: 2c4bdc9d1bf7
+    last_write_checksum: sha1:73bf099dcebf0b6d9a874fa29df82c1b39dfcf59
+    pristine_git_object: ddd70aae4cbc934332c500e099b6bb1a7cc35ff7
+  src/main/java/net/nova/api/utils/OneOfDeserializer.java:
+    id: 1b5d86b082b3
+    last_write_checksum: sha1:18c66ee75d60059619174e67bef483dab55f157b
+    pristine_git_object: c8a39e83d9395e0778e33607ca0d7f082997c77d
+  src/main/java/net/nova/api/utils/Options.java:
+    id: 531c991be41d
+    last_write_checksum: sha1:a0f77a25085bf4aeb9798cf5c6c938dd8aae9c1a
+    pristine_git_object: 8623cca39fd7e0445caf13d2f442f717e6a04946
+  src/main/java/net/nova/api/utils/PathParamsMetadata.java:
+    id: 95925bc8c0bc
+    last_write_checksum: sha1:5ba4defdb40b33d580ea27fc2525861bae10f09f
+    pristine_git_object: e0a5fb0bbebd88d1f861b28c49ff794266ad4dae
+  src/main/java/net/nova/api/utils/QueryEncoding.java:
+    id: 324147ca4b84
+    last_write_checksum: sha1:bd0e2f424474458f7770059b540b9e819e5580a7
+    pristine_git_object: 34624228e0ce03fdcb54d0dc21c725cfe885ff5c
+  src/main/java/net/nova/api/utils/QueryParameter.java:
+    id: d3bd64fb3e12
+    last_write_checksum: sha1:8417b0f107aeed606ad328215b77fdb67c8e7a91
+    pristine_git_object: 90a01430a34086b36ec64abee28a79c8206023d9
+  src/main/java/net/nova/api/utils/QueryParameters.java:
+    id: 3e7dd438ddcd
+    last_write_checksum: sha1:edcb7d02370355399d5197b00b667424f2648b69
+    pristine_git_object: dc0534b37350f39c452c88973c38c341aba54b79
+  src/main/java/net/nova/api/utils/QueryParamsMetadata.java:
+    id: fb01560895a1
+    last_write_checksum: sha1:f047cb7191f30d535f792531781ae571420d332d
+    pristine_git_object: 3d684f684dc4b94cbfa590f4dd9a1ea5e86f77cc
+  src/main/java/net/nova/api/utils/RecordingClient.java:
+    id: 2c173a0f5d9c
+    last_write_checksum: sha1:42d17fd20192a4b96b4f28402bc58cec7a87300c
+    pristine_git_object: a63573bb1750a405e3cb9f9b7156bc8f9a1f09b2
+  src/main/java/net/nova/api/utils/Reflections.java:
+    id: 41ef42144b27
+    last_write_checksum: sha1:5af5a5ff820b6ca7088d4750531b4a41e00530b4
+    pristine_git_object: a8388913771aed6beab2c3c7f64a34cb716f3096
+  src/main/java/net/nova/api/utils/RequestBody.java:
+    id: ffc1305007a7
+    last_write_checksum: sha1:4ef43b32532f77fc837207f360e3e1c770a0d3b1
+    pristine_git_object: 60fab7ae754cb1f47fbfa6c67c6291f6a0ada427
+  src/main/java/net/nova/api/utils/RequestMetadata.java:
+    id: 512f5a96c313
+    last_write_checksum: sha1:8208d42335ac82c16205f980d240461f67b3a945
+    pristine_git_object: a84a2a46e0db25bd9ed42bd92c2a07af59b04fdf
+  src/main/java/net/nova/api/utils/Response.java:
+    id: 497b97f8faf1
+    last_write_checksum: sha1:bc4f0d85eb2a0b17b565d733d0d3217fe0b260bb
+    pristine_git_object: 7eacadfaaf81bf821440d6593844f8d6e176de3e
+  src/main/java/net/nova/api/utils/ResponseWithBody.java:
+    id: 5b61bbb62d28
+    last_write_checksum: sha1:606ab79615a2a3ffc014e4b0331625ecbbb2ecb5
+    pristine_git_object: 887be07d8eb872fc52355a9e2c9c017cc7ba5742
+  src/main/java/net/nova/api/utils/Retries.java:
+    id: d8374eae2017
+    last_write_checksum: sha1:8845a1fd04e5dd03018cc2c7d253535143904d87
+    pristine_git_object: 1aaf9e0dc7bf3da06d13f7aaffc453707241009f
+  src/main/java/net/nova/api/utils/RetryConfig.java:
+    id: cf7cfd815e33
+    last_write_checksum: sha1:12e647dbb8301e982b1cc0e87e2584b0b0ecdda7
+    pristine_git_object: 9708aed2aa388bcb9be1d1babb1b2d9fb8215891
+  src/main/java/net/nova/api/utils/RetryableException.java:
+    id: 912aa3c45b31
+    last_write_checksum: sha1:67353fb980cdd9e2fc9a7b469fd231d23beefb22
+    pristine_git_object: 311de20f0d65f0e6b26d177d8e500acf15b3a4d5
+  src/main/java/net/nova/api/utils/Security.java:
+    id: 3dc71455242d
+    last_write_checksum: sha1:3f9f82fd5105dc672d473baa12be6f4c2733e92e
+    pristine_git_object: 1985dd97ff835b926908f38f12d0e00183cfcdb0
+  src/main/java/net/nova/api/utils/SecurityMetadata.java:
+    id: eb74b4bb1224
+    last_write_checksum: sha1:bcff665f2b589748b6103ddfaee5d17e2a9962da
+    pristine_git_object: 78e0fa7852dc6a80f9400ae2ec137d7a1bf5f469
+  src/main/java/net/nova/api/utils/SerializedBody.java:
+    id: 8b4b6754e727
+    last_write_checksum: sha1:2c868f110bacc9aeba28666d612201b90795bc77
+    pristine_git_object: 7efb07b074415f6699fb40084f5c3e0a938efc50
+  src/main/java/net/nova/api/utils/SessionManager.java:
+    id: 6d43418667f7
+    last_write_checksum: sha1:4a7317510fdce692db0d3fc0894b2726fe9ff514
+    pristine_git_object: 53d28627caf2749370888223a79df6dd976b62fd
+  src/main/java/net/nova/api/utils/SpeakeasyHTTPClient.java:
+    id: a7abf03121fc
+    last_write_checksum: sha1:1ab3af0603851f5fb5096434c13b6d75e3751100
+    pristine_git_object: 8e154614651280d1c4198d136deb5af15b79c6f7
+  src/main/java/net/nova/api/utils/SpeakeasyLogger.java:
+    id: 400b96b751fa
+    last_write_checksum: sha1:e63297907161f17a6c2c5641f56a26738833169f
+    pristine_git_object: dc61fb7e69423ab41641045748a580487edd8732
+  src/main/java/net/nova/api/utils/SpeakeasyMetadata.java:
+    id: 550772d80ec2
+    last_write_checksum: sha1:ebfd6e1469d5a37d1c1e4d558a90d91ef541e0d9
+    pristine_git_object: 4cc7c241473db278894c357ab2ee12b259e49815
+  src/main/java/net/nova/api/utils/StreamingParser.java:
+    id: f6f1d4c4caf9
+    last_write_checksum: sha1:a3c7aba5db5d7266658c35f31b8ecfb9ad711b06
+    pristine_git_object: edc787a16961feeaaebef1b1b6c225bab5559c5f
+  src/main/java/net/nova/api/utils/TypedObject.java:
+    id: dd3b7e085359
+    last_write_checksum: sha1:dadb10fe2e037e3724d233478128f9c5188cf92c
+    pristine_git_object: 6b9db33dd76ff4a5d61e0a0262585ee3e8569f55
+  src/main/java/net/nova/api/utils/Types.java:
+    id: c7745d16600d
+    last_write_checksum: sha1:4d101e9373f0eaf2301dcfc52b6dbd0a479ca690
+    pristine_git_object: a6d41d5a889d8bc9d50fb12372a7262b8b472994
+  src/main/java/net/nova/api/utils/UnknownType.java:
+    id: d6d95ff9dfa7
+    last_write_checksum: sha1:2ab98ff84ee1d54f3121bb952cc6fd822b20d335
+    pristine_git_object: b7b422a9ad3fed872265c9410a69dfb08ed76fda
+  src/main/java/net/nova/api/utils/Utf8UrlEncoder.java:
+    id: 4159bdde0de2
+    last_write_checksum: sha1:9b2e6e77b4d5f073c150b350bf0796f7f9d399a9
+    pristine_git_object: 3d333b44cbee6175df4e86201179f17b6f36961e
+  src/main/java/net/nova/api/utils/Utils.java:
+    id: 56387abf6434
+    last_write_checksum: sha1:ed0e81196f557eedcf152b1d72bffecd7f3c6f7f
+    pristine_git_object: 87d7b3c032e009d81f5859297b6031627a529057
+  src/main/java/net/nova/api/utils/reactive/EventStream.java:
+    id: 068f44f19bf5
+    last_write_checksum: sha1:70d395df11d637fc3c5e55c8dce8f02aed4de564
+    pristine_git_object: deec48ee4557f528b10ad618518b422771edbe8d
+  src/main/java/net/nova/api/utils/reactive/ReactiveUtils.java:
+    id: 47e7d6c7b187
+    last_write_checksum: sha1:a456baf6f201c82ce611b3b75869e6a867398073
+    pristine_git_object: 0b990508115431c40e97011a195750c3e623ad9f
+examples:
+  createOAuthToken:
+    speakeasy-default-create-O-auth-token:
+      requestBody:
+        application/x-www-form-urlencoded: {"grant_type": "client_credentials", "scope": "distributions:read entities:read"}
+        application/json: {"grant_type": "client_credentials", "scope": "distributions:read entities:read"}
+      responses:
+        "200":
+          application/json: {"access_token": "<value>", "token_type": "Bearer", "expires_in": 233485, "scope": "distributions:read"}
+        "400":
+          application/json: {"error": "invalid_request"}
+  createDistributions:
+    speakeasy-default-create-distributions:
+      parameters:
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      requestBody:
+        application/json: [{"name": "April 20th Distribution from XYZ Sale", "distribution_date": "2024-04-20T00:00:00Z", "vehicle": "<value>", "payments": []}]
+      responses:
+        "201":
+          application/json: {"object": "list", "data": [{"object": "distribution", "livemode": true, "id": "<id>", "name": "April 20th Distribution from XYZ Sale", "distribution_date": "2024-04-20T00:00:00Z", "vehicle": "<value>", "short_id": "<id>", "status": "published", "published_at": "2025-07-17T09:24:34.055Z", "approved_at": "2025-05-10T13:26:57.628Z", "executed_at": null, "cancelled_at": "2026-02-19T12:52:32.933Z", "created_at": "2025-05-30T08:36:41.666Z", "updated_at": "2024-02-08T22:33:37.345Z", "sender_url": "https://worst-fedora.info", "payments": {"object": "list", "data": [], "has_more": true, "url": "/v1/distributions/{distribution_id}/payments"}}], "has_more": false, "url": "/v1/distributions"}
+        "400":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  getDistribution:
+    speakeasy-default-get-distribution:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      responses:
+        "200":
+          application/json: {"object": "distribution", "livemode": true, "id": "<id>", "name": "April 20th Distribution from XYZ Sale", "distribution_date": "2024-04-20T00:00:00Z", "vehicle": "<value>", "short_id": "<id>", "status": "cancelled", "published_at": "2025-06-22T14:56:50.856Z", "approved_at": "2025-03-01T05:22:28.310Z", "executed_at": "2026-07-30T08:34:17.780Z", "cancelled_at": "2026-08-20T00:32:23.200Z", "created_at": "2026-08-14T15:54:35.388Z", "updated_at": "2026-04-13T16:24:21.564Z", "sender_url": "https://pastel-rule.name/", "payments": {"object": "list", "data": [], "has_more": true, "url": "/v1/distributions/{distribution_id}/payments"}}
+        "401":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  createPaymentInstructions:
+    speakeasy-default-create-payment-instructions:
+      parameters:
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      requestBody:
+        application/json: [{"entity": "ent_123", "payment_instructions": [{"type": "international_wire"}]}]
+      responses:
+        "201":
+          application/json: {"object": "list", "data": [{"object": "entity_payment_instructions", "livemode": true, "entity": "ent_123", "payment_instructions": {"object": "list", "data": [{"object": "payment_instructions", "livemode": false, "id": "pmi_123"}], "has_more": true, "url": "/v1/entities/ent_123/payment_instructions"}}], "has_more": true, "url": "/v1/payment_instructions"}
+        "400":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  createEntities:
+    speakeasy-default-create-entities:
+      parameters:
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      requestBody:
+        application/json: [{"name": "Jane Doe, LLC", "type": "individual", "external_references": ["entity-123"]}]
+      responses:
+        "201":
+          application/json: {"object": "list", "data": [{"object": "entity", "livemode": true, "id": "ent_123", "name": "Jane Doe, LLC", "type": "individual", "external_references": ["entity-123"]}], "has_more": false, "url": "/v1/entities"}
+        "400":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  getEntity:
+    speakeasy-default-get-entity:
+      parameters:
+        path:
+          id: "ent_123"
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      responses:
+        "200":
+          application/json: {"object": "entity", "livemode": false, "id": "ent_123", "name": "Jane Doe, LLC", "type": "individual", "external_references": ["entity-123"]}
+        "401":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  createContacts:
+    speakeasy-default-create-contacts:
+      parameters:
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      requestBody:
+        application/json: [{"name": "Jane Doe", "email": "jane.doe@example.com", "external_references": ["contact-123"]}]
+      responses:
+        "201":
+          application/json: {"object": "list", "data": [], "has_more": false, "url": "/v1/contacts"}
+        "400":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+  getContact:
+    speakeasy-default-get-contact:
+      parameters:
+        path:
+          id: "cnt_123"
+        header:
+          X-Organization-Id: "org_Xk7d2pQR9m3nBwYz"
+      responses:
+        "200":
+          application/json: {"object": "contact", "livemode": true, "id": "cnt_123", "name": "Jane Doe", "email": "jane.doe@example.com", "external_references": ["contact-123"]}
+        "401":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "429":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+        "500":
+          application/json: {"object": "error", "type": "invalid_request_error", "code": "parameter_invalid", "message": "The 'limit' parameter must be between 1 and 100.", "status": 400, "param": "limit"}
+examplesVersion: 1.0.2

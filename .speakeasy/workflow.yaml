@@ -1,10 +1,16 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-  nova-spec:
-    registry:
-      location: registry.speakeasyapi.dev/CHANGEME-workspace/nova/nova-spec
+    Nova API:
+        registry:
+            location: registry.speakeasyapi.dev/angellist/nova-sdk/nova-api
 targets:
-  nova-java:
-    target: java
-    source: nova-spec
+    nova-sdk:
+        target: java
+        source: Nova API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/angellist/nova-sdk/nova-api-java-code-samples
+            labelOverride:
+                fixedValue: Java (SDK)
+            blocking: false
