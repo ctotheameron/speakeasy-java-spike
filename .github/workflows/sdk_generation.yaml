@@ -1,0 +1,42 @@
+name: Generate
+
+permissions:
+  checks: write
+  contents: write
+  pull-requests: write
+  statuses: write
+
+"on":
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Force regeneration even if no spec changes are detected
+        type: boolean
+        default: false
+
+jobs:
+  generate:
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
+    with:
+      mode: direct
+      speakeasy_version: latest
+      force: ${{ github.event.inputs.force }}
+    secrets:
+      github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
+
+  notify-spec-repo:
+    needs: generate
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch submodule-bump event to api-gateway
+        env:
+          GH_TOKEN: ${{ secrets.API_GATEWAY_DISPATCH_TOKEN }}
+        run: |
+          gh api \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            /repos/angellistventure/api-gateway/dispatches \
+            -f event_type=nova-sdk-regenerated \
+            -F 'client_payload[sdk_sha]=${{ github.sha }}'
